@@ -10,11 +10,21 @@ public class AddressProcessor {
 	public static String  parseAdress(String text){
         String ret = null;
         List<Cluster> clusters = var.clusters;
+        String[] splited = text.split(" ");
         
 
         for(Cluster oblast : clusters){
             if(text.toLowerCase().contains(oblast.getName())){
                 ret = oblast.getName();
+            }
+        }
+
+        for(String str : splited){
+            for(Cluster cls : clusters){
+                if(str.toLowerCase().startsWith(cls.getKeyword())){
+                    ret = cls.getName();
+                    break;
+                }
             }
         }
 
