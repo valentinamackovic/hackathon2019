@@ -113,19 +113,19 @@ public class CrimetimeApplication {
 
 		//System.out.println("https://novisad.com/vesti");
 
-		Extractor noviSadComEx = new Extractor("news", "h1", "single", true);
-		noviSadComEx.getPageLinks("https://novisad.com/vesti");
-		noviSadComEx.getArticles();
-		noviSadComEx.writeToFile("novisad.com1.json");
-
-		for (int i = 2; i <= 5; i++) {
-			//System.out.println("https://novisad.com/vesti?page=" + i);
-
-			Extractor noviSadCom2Ex = new Extractor("news", "h1", "single", true);
-			noviSadCom2Ex.getPageLinks("https://novisad.com/vesti?page=" + i);
-			noviSadCom2Ex.getArticles();
-			noviSadCom2Ex.writeToFile("novisad.com" + i + ".json");
-		}
+//		Extractor noviSadComEx = new Extractor("news", "h1", "single", true);
+//		noviSadComEx.getPageLinks("https://novisad.com/vesti");
+//		noviSadComEx.getArticles();
+//		noviSadComEx.writeToFile("novisad.com1.json");
+//
+//		for (int i = 2; i <= 5; i++) {
+//			//System.out.println("https://novisad.com/vesti?page=" + i);
+//
+//			Extractor noviSadCom2Ex = new Extractor("news", "h1", "single", true);
+//			noviSadCom2Ex.getPageLinks("https://novisad.com/vesti?page=" + i);
+//			noviSadCom2Ex.getArticles();
+//			noviSadCom2Ex.writeToFile("novisad.com" + i + ".json");
+//		}
 
 		//System.out.println("https://www.021.rs/");
 
@@ -138,19 +138,21 @@ public class CrimetimeApplication {
 //		}
 
 		JSONArticleParser parser=new JSONArticleParser();
+		parser.populateFilesList();
+		parser.JsonToArticle();
 
 		System.out.println("END DATE: " + df.format(new Date()));
-		System.out.println("NUMBER OF ARTICLES: " + Extractor.numberOfAricles);
+//		System.out.println("NUMBER OF ARTICLES: " + Extractor.numberOfAricles);
 		System.out.println("END OF RESEARCH");
 		
 		System.out.println("............");
 		
 		
 		
-		for (Aricle string : noviSadComEx.getAllArticles()) {
-			//System.out.println(string.getContent());
-			System.out.println(AddressProcessor.parseAdress(string.getContent()));
-		}
+//		for (Aricle string : noviSadComEx.getAllArticles()) {
+//			//System.out.println(string.getContent());
+//			System.out.println(AddressProcessor.parseAdress(string.getContent()));
+//		}
 	}
 
 }

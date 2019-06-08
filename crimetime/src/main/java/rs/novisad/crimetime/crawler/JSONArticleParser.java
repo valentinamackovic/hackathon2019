@@ -6,24 +6,32 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import rs.novisad.crimetime.CrimetimeApplication;
 import rs.novisad.crimetime.entity.Aricle;
+import rs.novisad.crimetime.entity.ArticleService;
+import rs.novisad.crimetime.entity.ArticleServiceInterface;
 import rs.novisad.crimetime.entity.CrimeCategory;
 import rs.novisad.crimetime.entity.KeyWords;
 
+@RestController
+@RequestMapping("/api")
 public class JSONArticleParser {
+	
+	@Autowired
+	private ArticleServiceInterface articleService;
+
 	static ArrayList<File> filesList=new ArrayList<>();
 	static Gson gson=new Gson();
-	
-	static {
-		populateFilesList();
-		JsonToArticle();
-	}
 
-	public static void populateFilesList() {
+	public  void populateFilesList() {
 		
 		File file=new File(System.getProperty("user.dir").replace("crimetime\\", "") + "\\crawler_data\\");
 //		File file=new File("C:\\Users\\HP\\hakaton2.0\\hackathon2019\\crimetime\\crawler_data");
@@ -34,13 +42,17 @@ public class JSONArticleParser {
 	    }
 	}
 	
-	public static void JsonToArticle() {
+	public  void JsonToArticle() {
 		try {
 			for(File file: filesList) {
 				Reader reader= new FileReader(file);
 				CrimetimeApplication.articles=gson.fromJson(reader, new TypeToken<List<Aricle>>(){}.getType());
 				for(Aricle a: CrimetimeApplication.articles) {
-					getArticleContext(a);
+					if(!a.getTitle().contains("bugarsk")) {
+						getArticleContext(a);
+						System.out.println(a.getTitle());
+						articleService.save(a);
+					}
 				}							
 			}
 		} catch (Exception e) {
@@ -50,7 +62,7 @@ public class JSONArticleParser {
 	}
 	
     
-    public static void getArticleContext(Aricle article) {  	
+    public  void getArticleContext(Aricle article) {  	
     	String content=article.getContent();
     	content=content.replace(".", " ").
     	replace("!", " ").

@@ -1,9 +1,36 @@
 package rs.novisad.crimetime.entity;
 
-public class Aricle {
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity                
+@Table(name="articles")
+public class Aricle implements Serializable{
+
+	@Id                                 
+	@GeneratedValue(strategy=GenerationType.IDENTITY)  
+	@Column(name="article_id", unique=true, nullable=false) 
+	private int id;
+	
+	@Column(name="title", unique=false, nullable=false)
     private String title;
+	
+	@Column(name="url", unique=false, nullable=false)
     private String url;
+	
+	@Column(name="content", unique=false, nullable=false)
     private String content;
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="crime_category", unique=false, nullable=false)
     private CrimeCategory crimeCategory;
 
     public Aricle(String title, String url, String content) {
@@ -14,7 +41,15 @@ public class Aricle {
 
     public Aricle() {}
 
-    public CrimeCategory getCrimeCategory() {
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public CrimeCategory getCrimeCategory() {
 		return crimeCategory;
 	}
 
