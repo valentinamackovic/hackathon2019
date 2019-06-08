@@ -41,7 +41,7 @@ public class Extractor {
             try {
                 Document document = Jsoup.connect(site_path).get();
                 Elements otherLinks = document.getElementsByClass(titleClassName);
-                System.out.println(site_path + " number of links: " + otherLinks.size());
+                // System.out.println(site_path + " number of links: " + otherLinks.size());
                 for (Element element : otherLinks) {
                     String rel_path = element.select("a").attr("href");
                     if (includeSiteLink) {
@@ -64,6 +64,8 @@ public class Extractor {
             if (x.matches("^.*?(pretu|napad).*$") && x.startsWith("http")) {
                 try {
                     for (String link : links) {
+                        if (!link.startsWith("http"))
+                            continue;
                         document = Jsoup.connect(link).get();
                         Element article = document.select(titleElementSingle).first();
                         Element single = document.getElementsByClass(contentClassSingle).first();

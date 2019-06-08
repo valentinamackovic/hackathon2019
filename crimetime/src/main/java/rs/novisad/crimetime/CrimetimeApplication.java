@@ -98,7 +98,7 @@ public class CrimetimeApplication {
 
 		System.out.println("START DATE: " + df.format(new Date()));
 
-		System.out.println("https://novisad.com/vesti");
+		//System.out.println("https://novisad.com/vesti");
 
 		Extractor noviSadComEx = new Extractor("news", "h1", "single", true);
 		noviSadComEx.getPageLinks("https://novisad.com/vesti");
@@ -106,7 +106,7 @@ public class CrimetimeApplication {
 		noviSadComEx.writeToFile("novisad.com1.txt");
 
 		for (int i = 2; i <= 5; i++) {
-			System.out.println("https://novisad.com/vesti?page=" + i);
+			//System.out.println("https://novisad.com/vesti?page=" + i);
 
 			Extractor noviSadCom2Ex = new Extractor("news", "h1", "single", true);
 			noviSadCom2Ex.getPageLinks("https://novisad.com/vesti?page=" + i);
@@ -114,12 +114,14 @@ public class CrimetimeApplication {
 			noviSadCom2Ex.writeToFile("novisad.com" + i + ".txt");
 		}
 
-		System.out.println("https://www.021.rs/");
+		//System.out.println("https://www.021.rs/");
 
-		Extractor Nula21RsEx = new Extractor("article_title", "h1", "story", false);
-		Nula21RsEx.getPageLinks("https://www.021.rs/http://www.021.rs/Sve-vesti/Poslednje/3");
-		Nula21RsEx.getArticles();
-		Nula21RsEx.writeToFile("021.rs.txt");
+		for (int i = 20; i < 120; i+= 20) {
+			Extractor Nula21RsEx = new Extractor("article_title", "h1", "story", false);
+			Nula21RsEx.getPageLinks("https://www.021.rs/Novi%20Sad/4/" + i);
+			Nula21RsEx.getArticles();
+			Nula21RsEx.writeToFile("021.rs" +  i + ".txt");
+		}
 
 		System.out.println("END DATE: " + df.format(new Date()));
 		System.out.println("END OF RESEARCH");
