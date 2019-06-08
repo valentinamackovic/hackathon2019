@@ -85,7 +85,7 @@ public class Extractor {
                                 ConvertText.convert(single.text()));
                         if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null) {
                             articles.add(tempArticle);
-                            System.out.println("Loaded article: " + ++numberOfAricles);
+                            System.out.println("Loading article number " + ++numberOfAricles + "...");
                         }
                     }
                 } catch (Exception e) {
