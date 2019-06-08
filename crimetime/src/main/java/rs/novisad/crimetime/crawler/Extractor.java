@@ -1,5 +1,6 @@
 package rs.novisad.crimetime.crawler;
 
+import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -88,15 +89,14 @@ public class Extractor {
         try {
             new File(FILE_PATH);
             writer = new FileWriter(FILE_PATH);
-            articles.forEach(a -> {
-                try {
-                    String temp = "- Title: " + a.getTitle() + " (link: " + a.getUrl() + ")\n";
-                    System.out.println(temp);
-                    writer.write(temp);
-                } catch (IOException e) {
-                    System.err.println(e.getMessage());
-                }
-            });
+            try {
+                Gson gson = new Gson();
+                String temp = gson.toJson(articles);
+                System.out.println(temp);
+                writer.write(temp);
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            }
             writer.close();
         } catch (IOException e) {
             System.err.println(e.getMessage());
