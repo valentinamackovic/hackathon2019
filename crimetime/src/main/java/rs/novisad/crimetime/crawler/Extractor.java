@@ -7,7 +7,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import rs.novisad.crimetime.entity.Aricle;
 import rs.novisad.crimetime.entity.ConvertText;
-import rs.novisad.crimetime.entity.CrimeCategory;
 import rs.novisad.crimetime.entity.KeyWords;
 
 import java.io.File;
@@ -19,6 +18,8 @@ import java.util.List;
 
 public class Extractor {
 
+    public static int numberOfAricles = 0;
+
     private HashSet<String> links;
     private List<Aricle> articles;
 
@@ -28,8 +29,8 @@ public class Extractor {
     private boolean includeSiteLink;
     private Document document;
 
-//    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
-    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crawler_data\\";
+    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
+//    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crawler_data\\";
 
     public Extractor(String titleClassName, String titleElementSingle, String contentClassSingle, boolean includeSiteLink) {
         links = new HashSet<>();
@@ -67,7 +68,7 @@ public class Extractor {
     public void getArticles() {
         links.forEach(x -> {
 
-            if (x.matches("^.*?(pretu|napad).*$") && x.startsWith("http")) {
+            if (x.matches("^.*?(" + KeyWords.getRegexString() + ").*$") && x.startsWith("http")) {
                 try {
                     for (String link : links) {
                         if (!link.startsWith("http"))
@@ -75,11 +76,16 @@ public class Extractor {
                         document = Jsoup.connect(link).get();
                         Element article = document.select(titleElementSingle).first();
                         Element single = document.getElementsByClass(contentClassSingle).first();
-                        if (article.text().matches("^.*?(pretu|napad).*$")) {
-                            Aricle tempArticle = new Aricle(article.text(), link, single.text());
-                            
-                            if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null)
+                        if (article.text().matches("^.*?(" + KeyWords.getRegexString() + ").*$")) {
+                            Aricle tempArticle = new Aricle(
+                                    ConvertText.convert(article.text()),
+                                    link,
+                                    ConvertText.convert(single.text()));
+                            if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null) {
+
                                 articles.add(tempArticle);
+                                numberOfAricles++;
+                            }
                         }
                     }
                 } catch (Exception e) {
@@ -109,4 +115,9 @@ public class Extractor {
         }
     }
 
+    
+    public List<Aricle> getAllArticles(){
+    	return this.articles;
+    }
+    
 }
