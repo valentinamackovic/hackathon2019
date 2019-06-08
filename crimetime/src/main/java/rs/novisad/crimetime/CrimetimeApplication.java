@@ -3,16 +3,21 @@ package rs.novisad.crimetime;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import rs.novisad.crimetime.crawler.Extractor;
+import rs.novisad.crimetime.crawler.JSONArticleParser;
+import rs.novisad.crimetime.entity.Aricle;
 import rs.novisad.crimetime.entity.Cluster;
 import rs.novisad.crimetime.global.var;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 
 @SpringBootApplication
 public class CrimetimeApplication {
+	
+	public static ArrayList<Aricle> articles=new ArrayList<>();
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrimetimeApplication.class, args);
@@ -123,6 +128,8 @@ public class CrimetimeApplication {
 			Nula21RsEx.getArticles();
 			Nula21RsEx.writeToFile("021.rs" +  i + ".json");
 		}
+		
+		JSONArticleParser parser=new JSONArticleParser();
 
 		System.out.println("END DATE: " + df.format(new Date()));
 		System.out.println("END OF RESEARCH");

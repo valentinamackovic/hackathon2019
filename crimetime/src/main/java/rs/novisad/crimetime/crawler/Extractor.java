@@ -77,7 +77,7 @@ public class Extractor {
                         Element single = document.getElementsByClass(contentClassSingle).first();
                         if (article.text().matches("^.*?(pretu|napad).*$")) {
                             Aricle tempArticle = new Aricle(article.text(), link, single.text());
-                            getArticleContext(tempArticle);
+                            
                             if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null)
                                 articles.add(tempArticle);
                         }
@@ -108,28 +108,5 @@ public class Extractor {
             System.err.println(e.getMessage());
         }
     }
-    
-    public void getArticleContext(Aricle article) {  	
-    	String content=article.getContent();
-    	content=content.replace(".", " ").
-    	replace("!", " ").
-    	replace(",", " ").
-    	replace("?", " ");
-    	
-    	for(String w : KeyWords.words) {
-	           if (content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ubist") || w.equals("upuc") || 
-	        		   w.equals("ranjen")|| w.equals("pucnjav") || w.equals("silov"))) {
-	        	   article.setCrimeCategory(CrimeCategory.Ubistva);
-	           }
-	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("pljacka") || w.equals("opljacka") || 
-	        		   w.equals("pretuc")|| w.equals("utuc") || w.equals("povredj")|| w.equals("napad") || w.equals("nesta")
-	        		   || w.equals("dilova")|| w.equals("pretuk") )) {
-	        	   article.setCrimeCategory(CrimeCategory.FizickiNapadi);
-	           }  
-	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ukra") || w.equals("ukras") || 
-	        		   w.equals("obij") )) {
-	        	   article.setCrimeCategory(CrimeCategory.Pljacka);
-	           }
-    	}
-    }
+
 }
