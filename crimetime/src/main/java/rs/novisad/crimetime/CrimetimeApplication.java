@@ -13,6 +13,7 @@ public class CrimetimeApplication {
 		bwc.getPageLinks("https://novisad.com");
 		bwc.getArticles();
 		bwc.writeToFile("novisad.com.txt");
+//		bwc.getArticleContext("Jako je dobro biti mlad ali nije lepo niti dobro biti star. ");
 	}
 
 }
