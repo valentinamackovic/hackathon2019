@@ -11,16 +11,22 @@ import rs.novisad.crimetime.entity.ConvertText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 public class Extractor {
+    private static List<Aricle> articles;
+
+    private final static String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
+//    private final static String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crawler_data\\";
 
     public static int numberOfAricles = 0;
 
     private HashSet<String> links;
-    private List<Aricle> articles;
 
     private String contentClassName;
     private String titleClassName;
@@ -28,9 +34,6 @@ public class Extractor {
     private String contentClassSingle;
     private boolean includeSiteLink;
     private Document document;
-
-    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
-//    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crawler_data\\";
 
     public Extractor(String contentClassName,
                      String titleClassName,
@@ -95,22 +98,23 @@ public class Extractor {
         });
     }
 
-    public void writeToFile(String filename) {
-        FileWriter writer;
-        final String FILE_PATH = DATA_CRAWLER_PATH + filename;
+    public static void writeToFile(String filename) {
         try {
-            new File(FILE_PATH);
-            writer = new FileWriter(FILE_PATH);
-            try {
-                Gson gson = new Gson();
-                String temp = gson.toJson(articles);
-                writer.write(temp);
-            } catch (IOException e) {
-                System.err.println(e.getMessage());
+            System.out.println("WRITING TO FILE...");
+            final String FILE_PATH = DATA_CRAWLER_PATH + filename;
+            File file = new File(FILE_PATH);
+            if (!file.createNewFile())
+                System.out.println("FAILED TO CREATE NEW FILE...");
+            Gson gson = new Gson();
+            Files.write(Paths.get(FILE_PATH), "[".getBytes(), StandardOpenOption.APPEND);
+            for (Aricle article : articles
+            ) {
+                Files.write(Paths.get(FILE_PATH), (gson.toJson(article) + ",").getBytes(), StandardOpenOption.APPEND);
             }
-            writer.close();
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
+            Files.write(Paths.get(FILE_PATH), "]".getBytes(), StandardOpenOption.APPEND);
+            System.out.println("FILE READY!");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -15,9 +15,8 @@ import java.util.Date;
 public class LoadController {
 
     private static final String DATA_PATH = "https://www.021.rs/Novi-Sad/Hronika/77/";
-    private static final String FILE_PREFIX = "021.rs-version_";
-    private static final String FILE_EXTENSION = ".json";
-    private static final int NUMBER_OF_PAGES = 1;
+    private static final String FILE_NAME = "articles_all.json";
+    private static final int NUMBER_OF_PAGES = 92;
 
     @GetMapping("/loadData")
     public ResponseEntity<Object> loadData() {
@@ -29,19 +28,18 @@ public class LoadController {
         Extractor extractor = new Extractor("storyCatList","article_title", "h1", "story", false);
         extractor.getPageLinks(DATA_PATH);
         extractor.getArticles();
-        extractor.writeToFile(FILE_PREFIX + "1" + FILE_EXTENSION);
 
-        for (int i = 21, j = 2; i <= NUMBER_OF_PAGES * 21 - 21; i+= 21, j++) {
+        for (int i = 21, j = 2; i <= NUMBER_OF_PAGES * 21; i+= 21, j++) {
             extractor = new Extractor("storyCatList","article_title", "h1", "story", false);
             extractor.getPageLinks(DATA_PATH + i);
             extractor.getArticles();
-            extractor.writeToFile(FILE_PREFIX +  j + FILE_EXTENSION);
         }
 
         System.out.println("END DATE: " + df.format(new Date()));
         System.out.println("NUMBER OF ARTICLES: " + Extractor.numberOfAricles);
         System.out.println("END OF RESEARCH");
 
+        Extractor.writeToFile(FILE_NAME);
         return new ResponseEntity<>("Successful", HttpStatus.OK);
     }
 }
