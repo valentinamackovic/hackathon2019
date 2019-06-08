@@ -28,6 +28,7 @@ public class CrimetimeApplication {
 		JSONArticleParser parser=new JSONArticleParser();
 		parser.populateFilesList();
 		parser.JsonToArticle();
+		
 	}
 
 }

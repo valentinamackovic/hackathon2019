@@ -4,14 +4,40 @@ public class Cluster {
     private String name;
     private String[] addresses;
     private String keyword;
+    private double lon;
+    private double lat;
 
+    public Cluster(String name, String[] addresses, String keyword,double lon,double lat) {
+        this.name = name;
+        this.addresses = addresses;
+        this.keyword = keyword;
+        this.lon=lon;
+        this.lat=lat;
+    }
+    
     public Cluster(String name, String[] addresses, String keyword) {
         this.name = name;
         this.addresses = addresses;
         this.keyword = keyword;
     }
 
-    public String getName() {
+    public double getLon() {
+		return lon;
+	}
+
+	public void setLon(double lon) {
+		this.lon = lon;
+	}
+
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
+	public String getName() {
         return name;
     }
 

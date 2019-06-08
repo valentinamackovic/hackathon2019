@@ -2,18 +2,18 @@ package rs.novisad.crimetime.entity;
 
 public enum CrimeCategory {
 
-	Ubistva, FizickiNapadi, Pljacka;
+	TezaKrivicnaDela, LaksaKrivicnaDela, Prekrsaj;
 	
 	public static String toString(CrimeCategory e) {
 		switch (e) {
-		case Ubistva:
-			return "Ubistva";
+		case TezaKrivicnaDela:
+			return "TezaKrivicnaDela";
 			
-		case FizickiNapadi:
-			return "FizickiNapadi";
+		case LaksaKrivicnaDela:
+			return "LaksaKrivicnaDela";
 			
-		case Pljacka:
-			return "Pljacka";
+		case Prekrsaj:
+			return "Prekrsaj";
 			
 		default:
 			return "";
