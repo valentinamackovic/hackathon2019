@@ -136,4 +136,10 @@ public class Extractor {
 //	        }
     	}
     }
+    
+    public List<Aricle> getAllArticles(){
+    	return this.articles;
+    }
+    
+    
 }

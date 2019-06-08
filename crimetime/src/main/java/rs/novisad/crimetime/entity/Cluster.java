@@ -21,7 +21,7 @@ public class Cluster {
         return addresses;
     }
 
-    public void setAddresses(String[] addresses) {
+    public  void setAddresses(String[] addresses) {
         this.addresses = addresses;
     }
 }

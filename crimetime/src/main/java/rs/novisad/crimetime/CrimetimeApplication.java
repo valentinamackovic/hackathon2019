@@ -1,10 +1,12 @@
 package rs.novisad.crimetime;
 
+import org.apache.catalina.filters.AddDefaultCharsetFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import rs.novisad.crimetime.crawler.Extractor;
-import rs.novisad.crimetime.entity.Cluster;
+import rs.novisad.crimetime.entity.*;
 import rs.novisad.crimetime.global.var;
+import rs.novisad.crimetime.helper.AddressProcessor;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -93,6 +95,10 @@ public class CrimetimeApplication {
 				new Cluster("klis",
 						("temerinsk, sentandrejsk, primorsk, otokara kersovani," +
 								"cenejsk, paje radosavljevic, velebitsk, savsk").split(","))
+		);var.clusters.add(
+				new Cluster("petrovarad",
+						("temerinsk, sentandrejsk, primorsk, otokara kersovani," +
+								"cenejsk, paje radosavljevic, velebitsk, savsk").split(","))
 		);
 
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -116,16 +122,25 @@ public class CrimetimeApplication {
 		}
 
 		//System.out.println("https://www.021.rs/");
-
-		for (int i = 20; i < 120; i+= 20) {
-			Extractor Nula21RsEx = new Extractor("article_title", "h1", "story", false);
-			Nula21RsEx.getPageLinks("https://www.021.rs/Novi%20Sad/4/" + i);
-			Nula21RsEx.getArticles();
-			Nula21RsEx.writeToFile("021.rs" +  i + ".json");
-		}
+//
+//		for (int i = 20; i < 120; i+= 20) {
+//			Extractor Nula21RsEx = new Extractor("article_title", "h1", "story", false);
+//			Nula21RsEx.getPageLinks("https://www.021.rs/Novi%20Sad/4/" + i);
+//			Nula21RsEx.getArticles();
+//			Nula21RsEx.writeToFile("021.rs" +  i + ".json");
+//		}
 
 		System.out.println("END DATE: " + df.format(new Date()));
 		System.out.println("END OF RESEARCH");
+		
+		System.out.println("............");
+		
+		
+		
+		for (Aricle string : noviSadComEx.getAllArticles()) {
+			//System.out.println(string.getContent());
+			System.out.println(AddressProcessor.parseAdress(string.getContent()));
+		}
 	}
 
 }
