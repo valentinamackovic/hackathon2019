@@ -98,12 +98,21 @@ public class CrimetimeApplication {
 
 		System.out.println("START DATE: " + df.format(new Date()));
 
-		System.out.println("https://novisad.com");
+		System.out.println("https://novisad.com/vesti");
 
 		Extractor noviSadComEx = new Extractor("news", "h1", "single", true);
-		noviSadComEx.getPageLinks("https://novisad.com");
+		noviSadComEx.getPageLinks("https://novisad.com/vesti");
 		noviSadComEx.getArticles();
-		noviSadComEx.writeToFile("novisad.com.txt");
+		noviSadComEx.writeToFile("novisad.com1.txt");
+
+		for (int i = 2; i <= 5; i++) {
+			System.out.println("https://novisad.com/vesti?page=" + i);
+
+			Extractor noviSadCom2Ex = new Extractor("news", "h1", "single", true);
+			noviSadCom2Ex.getPageLinks("https://novisad.com/vesti?page=" + i);
+			noviSadCom2Ex.getArticles();
+			noviSadCom2Ex.writeToFile("novisad.com" + i + ".txt");
+		}
 
 		System.out.println("https://www.021.rs/");
 

@@ -22,6 +22,7 @@ public class Extractor {
     private String titleElementSingle;
     private String contentClassSingle;
     private boolean includeSiteLink;
+    private Document document;
 
     private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
 
@@ -44,8 +45,8 @@ public class Extractor {
                 for (Element element : otherLinks) {
                     String rel_path = element.select("a").attr("href");
                     if (includeSiteLink) {
-                        links.add(site_path + rel_path);
-                        getPageLinks(site_path + rel_path);
+                        links.add(site_path.split(".com")[0] + ".com" + rel_path);
+                        getPageLinks(site_path.split(".com")[0] + ".com" + rel_path);
                     }
                     else {
                         links.add(rel_path);
@@ -60,22 +61,21 @@ public class Extractor {
 
     public void getArticles() {
         links.forEach(x -> {
-            Document document;
-            try {
-                for (String link : links) {
-                    if (!link.startsWith("http"))
-                        continue;
-                    document = Jsoup.connect(link).get();
-                    Element article = document.select(titleElementSingle).first();
-                    Element single = document.getElementsByClass(contentClassSingle).first();
-                    if (article.text().matches("^.*?(pretu|Napad).*$")) {
-                        Aricle tempArticle = new Aricle(article.text(), link, single.text());
-                        if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null)
-                            articles.add(tempArticle);
+            if (x.matches("^.*?(pretu|napad).*$") && x.startsWith("http")) {
+                try {
+                    for (String link : links) {
+                        document = Jsoup.connect(link).get();
+                        Element article = document.select(titleElementSingle).first();
+                        Element single = document.getElementsByClass(contentClassSingle).first();
+                        if (article.text().matches("^.*?(pretu|napad).*$")) {
+                            Aricle tempArticle = new Aricle(article.text(), link, single.text());
+                            if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null)
+                                articles.add(tempArticle);
+                        }
                     }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
             }
         });
     }
