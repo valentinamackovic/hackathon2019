@@ -7,6 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import rs.novisad.crimetime.entity.Aricle;
 import rs.novisad.crimetime.entity.ConvertText;
+import rs.novisad.crimetime.entity.CrimeCategory;
 import rs.novisad.crimetime.entity.KeyWords;
 
 import java.io.File;
@@ -76,8 +77,7 @@ public class Extractor {
                         Element single = document.getElementsByClass(contentClassSingle).first();
                         if (article.text().matches("^.*?(pretu|napad).*$")) {
                             Aricle tempArticle = new Aricle(article.text(), link, single.text());
-                            String convertedContent=ConvertText.convert(tempArticle.getContent());
-                            getArticleContext(convertedContent);
+                            getArticleContext(tempArticle);
                             if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null)
                                 articles.add(tempArticle);
                         }
@@ -109,31 +109,27 @@ public class Extractor {
         }
     }
     
-    public void getArticleContext(String content) {  	
-    	
-//    	String[] words=content.split(" ");
+    public void getArticleContext(Aricle article) {  	
+    	String content=article.getContent();
     	content=content.replace(".", " ").
     	replace("!", " ").
     	replace(",", " ").
     	replace("?", " ");
     	
-    	for(String w : KeyWords.words) {		
-//	        for (int i = 0; i < words.length; i++) {
-	        	//kategorija ubistva
+    	for(String w : KeyWords.words) {
 	           if (content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ubist") || w.equals("upuc") || 
 	        		   w.equals("ranjen")|| w.equals("pucnjav") || w.equals("silov"))) {
-	              System.out.println("sadrzi tezi zlocin" );
+	        	   article.setCrimeCategory(CrimeCategory.Ubistva);
 	           }
 	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("pljacka") || w.equals("opljacka") || 
 	        		   w.equals("pretuc")|| w.equals("utuc") || w.equals("povredj")|| w.equals("napad") || w.equals("nesta")
 	        		   || w.equals("dilova")|| w.equals("pretuk") )) {
-		              System.out.println("sadrzi laksi zlocin" );
+	        	   article.setCrimeCategory(CrimeCategory.FizickiNapadi);
 	           }  
 	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ukra") || w.equals("ukras") || 
 	        		   w.equals("obij") )) {
-		              System.out.println("sadrzi kradju" );
+	        	   article.setCrimeCategory(CrimeCategory.Pljacka);
 	           }
-//	        }
     	}
     }
 }
