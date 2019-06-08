@@ -21,12 +21,7 @@ import rs.novisad.crimetime.entity.ArticleServiceInterface;
 import rs.novisad.crimetime.entity.CrimeCategory;
 import rs.novisad.crimetime.entity.KeyWords;
 
-@RestController
-@RequestMapping("/api")
 public class JSONArticleParser {
-	
-	@Autowired
-	private ArticleServiceInterface articleService;
 
 	static ArrayList<File> filesList=new ArrayList<>();
 	static Gson gson=new Gson();
@@ -43,18 +38,20 @@ public class JSONArticleParser {
 	}
 	
 	public  void JsonToArticle() {
+		ArrayList<Aricle> allArticles=new ArrayList<>();
 		try {
 			for(File file: filesList) {
 				Reader reader= new FileReader(file);
-				CrimetimeApplication.articles=gson.fromJson(reader, new TypeToken<List<Aricle>>(){}.getType());
-				for(Aricle a: CrimetimeApplication.articles) {
-					if(!a.getTitle().contains("bugarsk")) {
-						getArticleContext(a);
-						System.out.println(a.getTitle());
-						articleService.save(a);
-					}
-				}							
+				ArrayList<Aricle> tempArticles=gson.fromJson(reader, new TypeToken<List<Aricle>>(){}.getType());
+				allArticles.addAll(tempArticles);
+											
 			}
+			CrimetimeApplication.articles.addAll(allArticles);
+			for(Aricle a: CrimetimeApplication.articles) {
+				getArticleContext(a);
+				System.out.println(a.getTitle());
+			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -81,6 +78,9 @@ public class JSONArticleParser {
 	           }  
 	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ukra") || w.equals("ukras") || 
 	        		   w.equals("obij") )) {
+	        	   article.setCrimeCategory(CrimeCategory.Pljacka);
+	           }
+	           else  {
 	        	   article.setCrimeCategory(CrimeCategory.Pljacka);
 	           }
     	}

@@ -26,7 +26,8 @@ public class Aricle implements Serializable{
 	@Column(name="url", unique=false, nullable=false)
     private String url;
 	
-	@Column(name="content", unique=false, nullable=false)
+	
+	@Column(name="content", unique=false, nullable=false, columnDefinition = "longtext")
     private String content;
 	
 	@Enumerated(EnumType.STRING)
