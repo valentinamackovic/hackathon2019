@@ -115,28 +115,28 @@ public class Extractor {
             System.err.println(e.getMessage());
         }
     }
-    
-    public void getArticleContext(String content) {  	
-    	
+
+    public void getArticleContext(String content) {
+
 //    	String[] words=content.split(" ");
     	content=content.replace(".", " ").
     	replace("!", " ").
     	replace(",", " ").
     	replace("?", " ");
-    	
-    	for(String w : KeyWords.words) {		
+
+    	for(String w : KeyWords.words) {
 //	        for (int i = 0; i < words.length; i++) {
 	        	//kategorija ubistva
-	           if (content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ubist") || w.equals("upuc") || 
+	           if (content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ubist") || w.equals("upuc") ||
 	        		   w.equals("ranjen")|| w.equals("pucnjav") || w.equals("silov"))) {
 	              System.out.println("sadrzi tezi zlocin" );
 	           }
-	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("pljacka") || w.equals("opljacka") || 
+	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("pljacka") || w.equals("opljacka") ||
 	        		   w.equals("pretuc")|| w.equals("utuc") || w.equals("povredj")|| w.equals("napad") || w.equals("nesta")
 	        		   || w.equals("dilova")|| w.equals("pretuk") )) {
 		              System.out.println("sadrzi laksi zlocin" );
-	           }  
-	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ukra") || w.equals("ukras") || 
+	           }
+	           else if(content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ukra") || w.equals("ukras") ||
 	        		   w.equals("obij") )) {
 		              System.out.println("sadrzi kradju" );
 	           }
