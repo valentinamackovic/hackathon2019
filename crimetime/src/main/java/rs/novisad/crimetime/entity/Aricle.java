@@ -4,6 +4,7 @@ public class Aricle {
     private String title;
     private String url;
     private String content;
+    private CrimeCategory crimeCategory;
 
     public Aricle(String title, String url, String content) {
         this.title = title;
@@ -13,7 +14,15 @@ public class Aricle {
 
     public Aricle() {}
 
-    public String getTitle() {
+    public CrimeCategory getCrimeCategory() {
+		return crimeCategory;
+	}
+
+	public void setCrimeCategory(CrimeCategory crimeCategory) {
+		this.crimeCategory = crimeCategory;
+	}
+
+	public String getTitle() {
         return title.toLowerCase();
     }
 

@@ -131,6 +131,7 @@ public class CrimetimeApplication {
 //		}
 
 		System.out.println("END DATE: " + df.format(new Date()));
+		System.out.println("NUMBER OF ARTICLES: " + Extractor.numberOfAricles);
 		System.out.println("END OF RESEARCH");
 		
 		System.out.println("............");
