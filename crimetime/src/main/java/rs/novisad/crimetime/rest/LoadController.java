@@ -17,7 +17,7 @@ public class LoadController {
     private static final String DATA_PATH = "https://www.021.rs/Novi-Sad/Hronika/77/";
     private static final String FILE_PREFIX = "021.rs-version_";
     private static final String FILE_EXTENSION = ".json";
-    private static final int NUMBER_OF_PAGES = 10;
+    private static final int NUMBER_OF_PAGES = 1;
 
     @GetMapping("/loadData")
     public ResponseEntity<Object> loadData() {

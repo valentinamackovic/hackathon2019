@@ -53,7 +53,6 @@ public class Extractor {
                 Document document = Jsoup.connect(site_path).get();
                 Element content = document.getElementsByClass(contentClassName).first();
                 Elements otherLinks = content.getElementsByClass(titleClassName);
-                // System.out.println(site_path + " number of links: " + otherLinks.size());
                 for (Element element : otherLinks) {
                     String rel_path = element.select("a").attr("href");
                     if (includeSiteLink) {
@@ -86,7 +85,7 @@ public class Extractor {
                                 ConvertText.convert(single.text()));
                         if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null) {
                             articles.add(tempArticle);
-                            System.out.println(numberOfAricles++);
+                            System.out.println("Loaded article: " + ++numberOfAricles);
                         }
                     }
                 } catch (Exception e) {
@@ -105,7 +104,6 @@ public class Extractor {
             try {
                 Gson gson = new Gson();
                 String temp = gson.toJson(articles);
-                System.out.println(temp);
                 writer.write(temp);
             } catch (IOException e) {
                 System.err.println(e.getMessage());
