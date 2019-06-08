@@ -16,6 +16,7 @@ public class CrimetimeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrimetimeApplication.class, args);
+		
 		var.clusters.add(
 				new Cluster("centar",
 						("zmaj jovin, dunvask, ilije ognjanovic, laze telecko, milticev, pasicev, zlatne gred," +
