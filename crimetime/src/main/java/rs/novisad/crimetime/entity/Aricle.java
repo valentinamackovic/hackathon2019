@@ -14,7 +14,7 @@ public class Aricle {
     public Aricle() {}
 
     public String getTitle() {
-        return title;
+        return title.toLowerCase();
     }
 
     public void setTitle(String title) {
@@ -30,10 +30,12 @@ public class Aricle {
     }
 
     public String getContent() {
-        return content;
+        return content.toLowerCase();
     }
 
     public void setContent(String content) {
         this.content = content;
     }
+
+    public String getTitleAndContent() {return (this.title + this.content).toLowerCase();}
 }
