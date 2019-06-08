@@ -10,23 +10,23 @@ public class var {
 
     static {
         clusters.add(
-                new Cluster("centar",
+                new Cluster("Centar",
                         ("zmaj jovin, dunvask, ilije ognjanovic, laze telecko, milticev, pasicev, zlatne gred," +
                                 "njegosev, futosk, jevrejsk, safarnikov, masarikov, jovana subotic," +
                                 "vojvode bojovic, lukijana musick, vojvode supljikc, vuka karadzic," +
-                                "pap pavl, narodnih heroj, zeleznick, vase stajic").split(","))
+                                "pap pavl, narodnih heroj, zeleznick, vase stajic").split(","),"centar")
         );
         clusters.add(
-                new Cluster("stari grad",
+                new Cluster("Stari grad",
                         ("maksima gorkog, radnick, strazilovsk, stevana music, vojvode misic, jovana djordjevic," +
-                                "vladike platon, sutjesk, zarka zrenjanin").split(","))
+                                "vladike platon, sutjesk, zarka zrenjanin").split(","), "stari grad")
         );
         clusters.add(
-                new Cluster("kej",
-                        "kej zrtava racij, beogradski, suncani".split(","))
+                new Cluster("Kej",
+                        "kej zrtava racij, beogradski, suncani".split(","), "kej")
         );
         clusters.add(
-                new Cluster("podbar",
+                new Cluster("Podbara",
                         ("temerinsk, gundulicev, almask, kosovsk, tekelijin, marka miljanov," +
                                 "save vukovic, bele njiv, djordja rajkovic, filipa visnjic," +
                                 "svetosavsk, marice srpsk, sterijin, baranjsk, peck, petra kocic," +
@@ -35,56 +35,56 @@ public class var {
                                 "danicicev, sumadijsk, episkopa visarion, zarka vasiljevic, " +
                                 "stevana milovanov, milosa bajic, dusana vasiljev," +
                                 "milana rakic, venizelosov, koste hadzi mladj, zemljane cuprij," +
-                                "marka nesic").split(","))
+                                "marka nesic").split(","), "podbar")
         );
         clusters.add(
-                new Cluster("salaj",
+                new Cluster("Salajka",
                         ("kisack, jovana cvijic, dositejev, karadjordjev," +
-                                "branka radicevic, radoja domanovic, partizanska").split(","))
+                                "branka radicevic, radoja domanovic, partizanska").split(","), "salaj")
         );
         clusters.add(
-                new Cluster("grbavic",
+                new Cluster("Grbavica",
                         ("brace ribnik, mise dimitrijevic, danila kis, vojvodjansk, lasla gal, " +
-                                "puskinov, gogoljev, tolstojev, vojvode knicanin").split(","))
+                                "puskinov, gogoljev, tolstojev, vojvode knicanin").split(","), "grbavic")
         );
         clusters.add(
                 new Cluster("liman I i II",
                         ("fruskogorsk, narodnog front, dr sime milosevic, drage spasic," +
-                                "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","))
+                                "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","), "liman I i II")
         );
         clusters.add(
                 new Cluster("liman III i IV",
-                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","))
+                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "Liman III i IV")
         );
         clusters.add(
-                new Cluster("sajmist",
+                new Cluster("Sajmiste",
                         ("cara dusan, hajduk veljkov, novosadskog sajm, rumenack, brace popovic," +
-                                "hadzi ruminov, stevana mokranjc").split(","))
+                                "hadzi ruminov, stevana mokranjc").split(","), "sajmist")
         );
         clusters.add(
-                new Cluster("telep",
+                new Cluster("Telep",
                         ("ilariona ruvarc, heroja pinkij, cirila i metodij, petefi sandor," +
-                                "subotick, vrsack, adi endre, bogdana suput, fejes klar, sarplaninsk").split(","))
+                                "subotick, vrsack, adi endre, bogdana suput, fejes klar, sarplaninsk").split(","), "telep")
         );
         clusters.add(
-                new Cluster("detelinar",
+                new Cluster("Detelinara",
                         ("kornelija stankovic, milenka grcic, janka veselinovic, janka cmelik, " +
-                                "dr svetislava kasapinovic, ilije bircanin").split(","))
+                                "dr svetislava kasapinovic, ilije bircanin").split(","), "detelinar")
         );
         clusters.add(
-                new Cluster("novo naselj",
+                new Cluster("Novo naselje",
                         ("radivoja rase raduljkov, stojana novakovic, djordja niksica johanm todora javanovic," +
                                 "mileve maric, kace dejanovic, seljackih bun, brace dronjak, bate brkic, " +
-                                "dusana danilovic, stevana hladnog, antuna urban").split(","))
+                                "dusana danilovic, stevana hladnog, antuna urban").split(","), "novo naselj")
         );
         clusters.add(
-                new Cluster("adic",
-                        "branka copic, slavujev, sime solaj, podunavsk".split(","))
+                new Cluster("Adice",
+                        "branka copic, slavujev, sime solaj, podunavsk".split(","), "adic")
         );
         clusters.add(
-                new Cluster("klis",
+                new Cluster("Klisa",
                         ("temerinsk, sentandrejsk, primorsk, otokara kersovani," +
-                                "cenejsk, paje radosavljevic, velebitsk, savsk").split(","))
+                                "cenejsk, paje radosavljevic, velebitsk, savsk").split(","), "klis")
         );
     }
 }

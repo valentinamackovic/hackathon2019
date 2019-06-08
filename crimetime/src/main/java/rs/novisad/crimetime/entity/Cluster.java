@@ -3,10 +3,12 @@ package rs.novisad.crimetime.entity;
 public class Cluster {
     private String name;
     private String[] addresses;
+    private String keyword;
 
-    public Cluster(String name, String[] addresses) {
+    public Cluster(String name, String[] addresses, String keyword) {
         this.name = name;
         this.addresses = addresses;
+        this.keyword = keyword;
     }
 
     public String getName() {
@@ -23,5 +25,10 @@ public class Cluster {
 
     public  void setAddresses(String[] addresses) {
         this.addresses = addresses;
+    }
+
+
+    public String getKeyword() {
+        return keyword;
     }
 }
