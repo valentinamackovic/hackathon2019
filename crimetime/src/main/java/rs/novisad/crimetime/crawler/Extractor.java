@@ -14,21 +14,29 @@ import java.util.HashSet;
 import java.util.List;
 
 public class Extractor {
+
     private HashSet<String> links;
     private List<Aricle> articles;
 
-    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir") + "\\crimetime\\crawler_data\\";
+    private String titleClassName;
+    private String titleElementSingle;
+    private String contentClassSingle;
 
-    public Extractor() {
+    private final String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
+
+    public Extractor(String titleClassName, String titleElementSingle, String contentClassSingle) {
         links = new HashSet<>();
         articles = new ArrayList<>();
+        this.titleClassName = titleClassName;
+        this.titleElementSingle = titleElementSingle;
+        this.contentClassSingle = contentClassSingle;
     }
 
     public void getPageLinks(String site_path) {
         if (!links.contains(site_path)) {
             try {
                 Document document = Jsoup.connect(site_path).get();
-                Elements otherLinks = document.getElementsByClass("news");
+                Elements otherLinks = document.getElementsByClass(titleClassName);
                 for (Element element : otherLinks) {
                     String rel_path = element.select("a").attr("href");
                     links.add(site_path + rel_path);
@@ -46,8 +54,8 @@ public class Extractor {
             try {
                 for (String link : links) {
                     document = Jsoup.connect(link).get();
-                    Element article = document.select("h1").first();
-                    Element single = document.getElementsByClass("single").first();
+                    Element article = document.select(titleElementSingle).first();
+                    Element single = document.getElementsByClass(contentClassSingle).first();
                     if (article.text().matches("^.*?(pretu|Fakultet|FAKULTET).*$")) {
                         Aricle tempArticle = new Aricle(article.text(), link, single.text());
                         if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null)
