@@ -1,11 +1,6 @@
 package rs.novisad.crimetime.crawler;
 
-import org.elasticsearch.action.index.IndexResponse;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.transport.TransportAddress;
-import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -17,7 +12,6 @@ import rs.novisad.crimetime.entity.KeyWords;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -101,15 +95,14 @@ public class Extractor {
         try {
             new File(FILE_PATH);
             writer = new FileWriter(FILE_PATH);
-            articles.forEach(a -> {
-                try {
-                    String temp = "- Title: " + a.getTitle() + " (link: " + a.getUrl() + ")\n";
-                    System.out.println(temp);
-                    writer.write(temp);
-                } catch (IOException e) {
-                    System.err.println(e.getMessage());
-                }
-            });
+            try {
+                Gson gson = new Gson();
+                String temp = gson.toJson(articles);
+                System.out.println(temp);
+                writer.write(temp);
+            } catch (IOException e) {
+                System.err.println(e.getMessage());
+            }
             writer.close();
         } catch (IOException e) {
             System.err.println(e.getMessage());

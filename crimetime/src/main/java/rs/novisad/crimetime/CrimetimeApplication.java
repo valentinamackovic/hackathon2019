@@ -104,7 +104,7 @@ public class CrimetimeApplication {
 		Extractor noviSadComEx = new Extractor("news", "h1", "single", true);
 		noviSadComEx.getPageLinks("https://novisad.com/vesti");
 		noviSadComEx.getArticles();
-		noviSadComEx.writeToFile("novisad.com1.txt");
+		noviSadComEx.writeToFile("novisad.com1.json");
 
 		for (int i = 2; i <= 5; i++) {
 			//System.out.println("https://novisad.com/vesti?page=" + i);
@@ -112,7 +112,7 @@ public class CrimetimeApplication {
 			Extractor noviSadCom2Ex = new Extractor("news", "h1", "single", true);
 			noviSadCom2Ex.getPageLinks("https://novisad.com/vesti?page=" + i);
 			noviSadCom2Ex.getArticles();
-			noviSadCom2Ex.writeToFile("novisad.com" + i + ".txt");
+			noviSadCom2Ex.writeToFile("novisad.com" + i + ".json");
 		}
 
 		//System.out.println("https://www.021.rs/");
@@ -121,7 +121,7 @@ public class CrimetimeApplication {
 			Extractor Nula21RsEx = new Extractor("article_title", "h1", "story", false);
 			Nula21RsEx.getPageLinks("https://www.021.rs/Novi%20Sad/4/" + i);
 			Nula21RsEx.getArticles();
-			Nula21RsEx.writeToFile("021.rs" +  i + ".txt");
+			Nula21RsEx.writeToFile("021.rs" +  i + ".json");
 		}
 
 		System.out.println("END DATE: " + df.format(new Date()));
