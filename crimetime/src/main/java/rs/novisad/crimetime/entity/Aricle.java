@@ -36,4 +36,6 @@ public class Aricle {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public String getTitleAndContent() {return this.title + this.content;}
 }
