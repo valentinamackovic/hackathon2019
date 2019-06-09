@@ -3,7 +3,7 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"name":"liman I i II"},
+      "properties": {"name":"limanIiII"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -50,7 +50,7 @@
     },
     {
       "type": "Feature",
-      "properties": {"name":"liman III i IV"},
+      "properties": {"name":"limanIIIiIV"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -357,7 +357,7 @@
     },
     {
       "type": "Feature",
-      "properties": {"name":"novo naselje"},
+      "properties": {"name":"novomnaselj"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [

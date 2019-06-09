@@ -28,6 +28,8 @@ function getClusters(){
         	orange=data.orange;
         	red=data.red;
         	clusters=data.clusters;
+            best5=clusters.sort(function(a, b){return a.riskPoints-b.riskPoints}).slice(0, 5);
+            worst5=clusters.sort(function(a, b){return b.riskPoints-a.riskPoints}).slice(0, 5);
             console.log('green: '+green);
             console.log('yellow: '+yellow);
             console.log('orange: '+orange);
@@ -40,6 +42,19 @@ function getClusters(){
                 attribution: ''
             }).addTo(map);
             L.geoJson(naselja, {style: style}).addTo(map);
+            console.log('best: '+best5);
+            console.log('worst: '+worst5);
+            
+            var worstEl = $('#worst5list');
+            worst5.forEach(function(entry) {
+                worstEl.append('<li>' + entry.name + '</li>');
+            });
+
+            var bestEl = $('#best5list');
+            best5.forEach(function(entry) {
+                bestEl.append('<li>' + entry.name + '</li>');
+            });
+
         }
     });
 }
@@ -59,13 +74,13 @@ function getColor(naselje){
 	 var i;
 	 for(i=0; i<clusters.length; i++){
 	  	var cluster=clusters[i];
-	  	if(clusters[i].numberOfAccidents<=green && clusters[i].name===naselje.properties.name)
+	  	if(clusters[i].numberOfAccidents<=green && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
 	  		return'green';
-	    else if(clusters[i].numberOfAccidents<=yellow && clusters[i].name===naselje.properties.name)
+	    else if(clusters[i].numberOfAccidents<=yellow && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
 		    return'yellow';
-	    else if(clusters[i].numberOfAccidents<=orange && clusters[i].name===naselje.properties.name)
+	    else if(clusters[i].numberOfAccidents<=orange && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
 		    return  'orange';
-	    else if(clusters[i].numberOfAccidents<=red && clusters[i].name===naselje.properties.name)
+	    else if(clusters[i].numberOfAccidents<=red && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
 		    return 'red';
 	    
 	  }

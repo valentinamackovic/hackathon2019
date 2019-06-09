@@ -44,13 +44,32 @@ public class FilterController {
     			for(Cluster cls : var.clusters) {
     				if(cls.getName().equals(str)) {
     					cls.setNumberOfAccidents(cls.getNumberOfAccidents() + 1);
-    					if(article.getCrimeCategory().equals("prekrsaj")) {
+    					if(article.getCrimeCategory().equals("Prekrsaj")) {
     						cls.setRiskPoints(cls.getRiskPoints() + 1);
-    					}else {
+    					}else if (article.getCrimeCategory().equals("LaksaKrivicnaDela")) {
     						cls.setRiskPoints(cls.getRiskPoints() + 2);
+    					}else {
+    						cls.setRiskPoints(cls.getRiskPoints() + 3);
     					}
     					
     				}
+    			}
+    		}else {
+    			str = AddressProcessor.parseAdress(article.getTitle());
+    			if(!str.equals("")) {
+    				for(Cluster cls : var.clusters) {
+        				if(cls.getName().equals(str)) {
+        					cls.setNumberOfAccidents(cls.getNumberOfAccidents() + 1);
+        					if(article.getCrimeCategory().equals("Prekrsaj")) {
+        						cls.setRiskPoints(cls.getRiskPoints() + 1);
+        					}else if (article.getCrimeCategory().equals("LaksaKrivicnaDela")) {
+        						cls.setRiskPoints(cls.getRiskPoints() + 2);
+        					}else {
+        						cls.setRiskPoints(cls.getRiskPoints() + 3);
+        					}
+        					
+        				}
+        			}
     			}
     		}
     	}
@@ -65,18 +84,4 @@ public class FilterController {
     	retVal.put("clusters", var.clusters);
         return new ResponseEntity<>(retVal, HttpStatus.OK);
     }
-
-    @GetMapping("/best5")
-	public ResponseEntity<Object> getBestFive() {
-		doFilter();
-		Collections.sort(var.clusters, new ClusterComparator());
-		return new ResponseEntity<>(var.clusters.subList(0,5), HttpStatus.OK);
-	}
-
-	@GetMapping("/worst5")
-	public ResponseEntity<Object> getWorstFive() {
-		doFilter();
-		Collections.sort(var.clusters, new ClusterComparator().reversed());
-		return new ResponseEntity<>(var.clusters.subList(0,5), HttpStatus.OK);
-	}
 }
