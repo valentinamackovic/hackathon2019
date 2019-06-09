@@ -1,18 +1,17 @@
 
-// var divMap=document.getElementById("map");
-var map=L.map('map').setView([45.267, 19.833], 14);
+
 var green;
 var yellow;
 var orange;
 var red;
 var clusters;
+var naselja;
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoidmFsZW50aW5ha3lmeHJ0ZGZpeWt1dHlzIiwiYSI6ImNqd256dmp6dTA5aGczem55MjVzYWF5eGsifQ.ZNvZnQeTL7wK7RpIOmizLw'
-}).addTo(map);  
+
+$.getJSON("naselja.json", function(json) {
+	naselja=json;
+    console.log(json); 
+}); 
 
 function getClusters(){
     $.ajax({
@@ -33,24 +32,47 @@ function getClusters(){
             console.log('yellow: '+yellow);
             console.log('orange: '+orange);
             console.log('red: '+red);
-            
-            var i;
-            for(i=0; i<clusters.length; i++){
-            	var cluster=clusters[i];
-            	if(clusters[i].numberOfAccidents<=green)
-            		dangerZones(cluster, '#18ad1d');
-            	else if(clusters[i].numberOfAccidents<=yellow)
-            		dangerZones(cluster, '#dbdb30');
-            	else if(clusters[i].numberOfAccidents<=orange)
-            		dangerZones(cluster, '#db9930');
-            	else if(clusters[i].numberOfAccidents<=red)
-            		dangerZones(cluster, '#ce3227');
-            }
+       
+            var map = L.map('map').setView([45.267, 19.833], 14);
+
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFsZW50aW5ha3lmeHJ0ZGZpeWt1dHlzIiwiYSI6ImNqd256dmp6dTA5aGczem55MjVzYWF5eGsifQ.ZNvZnQeTL7wK7RpIOmizLw' , {
+                id: 'mapbox.streets',
+                attribution: ''
+            }).addTo(map);
+            L.geoJson(naselja, {style: style}).addTo(map);
         }
     });
 }
+function style(naselje) {
+	var test=getColor(naselje);
+	return {
+        fillColor: test,
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.3
+    }
+}
+
+function getColor(naselje){
+	 var i;
+	 for(i=0; i<clusters.length; i++){
+	  	var cluster=clusters[i];
+	  	if(clusters[i].numberOfAccidents<=green && clusters[i].name===naselje.properties.name)
+	  		return'green';
+	    else if(clusters[i].numberOfAccidents<=yellow && clusters[i].name===naselje.properties.name)
+		    return'yellow';
+	    else if(clusters[i].numberOfAccidents<=orange && clusters[i].name===naselje.properties.name)
+		    return  'orange';
+	    else if(clusters[i].numberOfAccidents<=red && clusters[i].name===naselje.properties.name)
+		    return 'red';
+	    
+	  }
+}
 
 function dangerZones(cluster, color){
+	
     var circle = L.circle([cluster.lon, cluster.lat], {
         color: color,
         fillColor: color,
@@ -58,16 +80,5 @@ function dangerZones(cluster, color){
         radius: 450
     }).addTo(map);
 }
-
-//$.get(  'http://nominatim.openstreetmap.org/search?format=json&q='+"Novi Sad, Grbavica", function(data){
-//       console.log(data[0]);
-//       var pol = L.rectangle([[data[0].boundingbox[0],data[0].boundingbox[2]], 
-//    	   [data[0].boundingbox[1],data[0].boundingbox[3]]], {
-//           color: '#db9930',
-//           fillColor: '#db9930',
-//           fillOpacity: 0.5,
-//           radius: 400
-//       }).addTo(map);
-//});
 
 getClusters();
