@@ -74,13 +74,13 @@ function getColor(naselje){
 	 var i;
 	 for(i=0; i<clusters.length; i++){
 	  	var cluster=clusters[i];
-	  	if(clusters[i].numberOfAccidents<=green && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
+	  	if(clusters[i].numberOfAccidents<=green && naselje.properties.name.includes(clusters[i].keyword))
 	  		return'green';
-	    else if(clusters[i].numberOfAccidents<=yellow && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
+	    else if(clusters[i].numberOfAccidents<=yellow && naselje.properties.name.includes(clusters[i].keyword))
 		    return'yellow';
-	    else if(clusters[i].numberOfAccidents<=orange && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
+	    else if(clusters[i].numberOfAccidents<=orange && naselje.properties.name.includes(clusters[i].keyword))
 		    return  'orange';
-	    else if(clusters[i].numberOfAccidents<=red && naselje.properties.name.includes(clusters[i].keyword.replace(' ','')))
+	    else if(clusters[i].numberOfAccidents<=red && naselje.properties.name.includes(clusters[i].keyword))
 		    return 'red';
 	    
 	  }
