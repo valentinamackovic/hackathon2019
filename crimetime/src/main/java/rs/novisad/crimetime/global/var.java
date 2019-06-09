@@ -48,13 +48,13 @@ public class var {
                                 "puskinov, gogoljev, tolstojev, vojvode knicanin").split(","), "grbavic",45.246157, 19.833241)
         );
         clusters.add(
-                new Cluster("liman I i II",
+                new Cluster("Liman I i II",
                         ("fruskogorsk, narodnog front, dr sime milosevic, drage spasic," +
-                                "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","), "liman I i II",19.826750,19.836880)
+                                "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","), "limanu 1",19.826750,19.836880)
         );
         clusters.add(
-                new Cluster("liman III i IV",
-                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "Liman III i IV",45.237750, 19.826750)
+                new Cluster("Liman III i IV",
+                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "limanu 3",45.237750, 19.826750)
         );
         clusters.add(
                 new Cluster("Sajmiste",
