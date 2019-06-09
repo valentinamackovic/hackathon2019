@@ -7,6 +7,7 @@ import java.util.List;
 
 public class var {
     public static List<Cluster> clusters = new ArrayList<>();
+    public static int crimeNumber = 0;
 
     static {
         clusters.add(
@@ -48,13 +49,10 @@ public class var {
                                 "puskinov, gogoljev, tolstojev, vojvode knicanin").split(","), "grbavic",45.246157, 19.833241)
         );
         clusters.add(
-                new Cluster("Лиман I и II",
+                new Cluster("Лиман",
                         ("fruskogorsk, narodnog front, dr sime milosevic, drage spasic," +
-                                "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","), "liman I i II",19.826750,19.836880)
-        );
-        clusters.add(
-                new Cluster("Лиман III и IV",
-                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "liman III i IV",45.237750, 19.826750)
+                                "dragise brasovan, dr ivana ribar, resavsk, ravanick," +
+                                "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj").split(","), "liman",19.826750,19.836880)
         );
         clusters.add(
                 new Cluster("Сајмиште",
@@ -86,5 +84,10 @@ public class var {
                         ("temerinsk, sentandrejsk, primorsk, otokara kersovani," +
                                 "cenejsk, paje radosavljevic, velebitsk, savsk").split(","), "klis", 45.302924, 19.824081)
         );
+    }
+
+    public static void loadCrimeNumber() {
+        crimeNumber = 0;
+        clusters.forEach(c -> crimeNumber += c.getNumberOfAccidents());
     }
 }

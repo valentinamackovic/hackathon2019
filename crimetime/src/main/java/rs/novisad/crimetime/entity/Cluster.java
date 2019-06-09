@@ -1,12 +1,10 @@
 package rs.novisad.crimetime.entity;
 
+import rs.novisad.crimetime.global.var;
+
 import java.util.Comparator;
 
 public class Cluster {
-    public static double totalSubstract = 0;
-
-    private final static double CRIMINAL_RATE = 33.21;
-    private final static double CRIMINAL_LAG = 12.13;
 
     private String name;
     private String[] addresses;
@@ -89,14 +87,8 @@ public class Cluster {
 
 	public void resetRisk() {this.numberOfAccidents = 0; this.riskPoints = 0; }
 
-	public static void setData(int a, int b) {
-        totalSubstract = b - a;
-    }
-
 	public double getRiskProcent() {
-        double riskPoints = this.riskPoints;
         double numberOfAccidents = this.numberOfAccidents;
-        double substract = riskPoints - numberOfAccidents;
-        return ((CRIMINAL_RATE * substract) / totalSubstract) + CRIMINAL_LAG;
+        return (numberOfAccidents * 100)/var.crimeNumber;
     }
 }

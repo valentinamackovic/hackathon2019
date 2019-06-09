@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db44825f-f706-4aab-a1aa-7c776f02f749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/crimetime/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/crimetime/target/" />
@@ -16,25 +18,60 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="93" selection-end-column="5" />
+            <state relative-caret-position="129">
+              <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
               <folding>
-                <element signature="e#1858#1859#0" expanded="true" />
-                <element signature="e#1896#1897#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/helper/AddressProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/CreateArticleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-212">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+            <state relative-caret-position="281">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="80" selection-end-column="95" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,6 +93,8 @@
       <find>novisad.com</find>
       <find>getArticleContext</find>
       <find>var.clusters</find>
+      <find>Cluster</find>
+      <find>liman</find>
     </findStrings>
     <replaceStrings>
       <replace>Title</replace>
@@ -81,11 +120,11 @@
         <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/IndexController.java" />
         <option value="$PROJECT_DIR$/crimetime/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/ClusterComparator.java" />
-        <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java" />
         <option value="$PROJECT_DIR$/crimetime/src/main/resources/static/js/filter.js" />
         <option value="$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js" />
         <option value="$PROJECT_DIR$/crimetime/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java" />
+        <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java" />
         <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" />
       </list>
     </option>
@@ -111,48 +150,46 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -161,7 +198,34 @@
               <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="global" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
@@ -169,17 +233,12 @@
               <item name="crimetime" type="462c0819:PsiDirectoryNode" />
               <item name="rest" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CrimeTime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crimetime" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,13 +250,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/crimetime/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.6425287" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -254,16 +313,18 @@
       <workItem from="1559984149438" duration="43550000" />
       <workItem from="1560073103450" duration="805000" />
       <workItem from="1560079421786" duration="2853000" />
+      <workItem from="1560085567697" duration="2109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47208000" />
+    <option name="totallyTimeSpent" value="49317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29425114" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2987897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -273,13 +334,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.31239936" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.46376812" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" weight="0.32850242" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32850242" />
@@ -354,23 +415,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/crawler_data/articles.json" />
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml" />
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Aricle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
           <caret line="87" column="18" selection-start-line="87" selection-start-column="18" selection-end-line="87" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/crawler/Extractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="85" column="59" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -399,30 +448,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/WebAppConfig.java" />
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/IndexController.java" />
-    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/CreateArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -440,13 +469,6 @@
             <element signature="e#194#195#0" expanded="true" />
             <element signature="e#218#219#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/helper/AddressProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
@@ -477,20 +499,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/crawler/Extractor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+        <state relative-caret-position="34">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="92" column="31" lean-forward="true" selection-start-line="92" selection-start-column="31" selection-end-line="93" selection-end-column="5" />
+        <state relative-caret-position="129">
+          <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
           <folding>
-            <element signature="e#1858#1859#0" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/CreateArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-212">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/helper/AddressProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/global/var.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="80" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

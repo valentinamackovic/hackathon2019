@@ -1,5 +1,6 @@
 package rs.novisad.crimetime.rest;
 
+import rs.novisad.crimetime.entity.Cluster;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,18 +11,14 @@ import rs.novisad.crimetime.crawler.Extractor;
 import rs.novisad.crimetime.entity.Aricle;
 import rs.novisad.crimetime.entity.ClusterComparator;
 import rs.novisad.crimetime.service.ArticleServiceInterface;
-import rs.novisad.crimetime.entity.Cluster;
 import rs.novisad.crimetime.global.var;
 import rs.novisad.crimetime.helper.AddressProcessor;
-
 import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
 @RequestMapping("/api")
 public class FilterController {
-	
-	private int br = 0;
 
     private ArticleServiceInterface articleService;
 
@@ -33,7 +30,6 @@ public class FilterController {
     public ResponseEntity<Object> doFilter() {
 		Map<String, Object> retVal = new HashMap<>();
 		int total = 0;
-		int totalRp = 0;
 
     	List<Aricle> allArticles = articleService.findAll();
 
@@ -77,11 +73,12 @@ public class FilterController {
 		for (Cluster cluster : var.clusters) {
 			if (cluster.getNumberOfAccidents() > total)
 				total = cluster.getNumberOfAccidents();
-			if (cluster.getRiskPoints() > totalRp)
-				totalRp = cluster.getRiskPoints();
 		}
 
-		Cluster.setData(total, totalRp);
+		var.loadCrimeNumber();
+
+//		System.out.println(var.crimeNumber);
+//		var.clusters.forEach(c -> System.out.println(c.getName() + ": " + c.getRiskProcent()));
 
     	retVal.put("green", total/4);
 		retVal.put("yellow", total/2);
