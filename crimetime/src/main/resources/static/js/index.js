@@ -8,6 +8,7 @@ var clusters;
 var naselja;
 var geojson;
 var map;
+var info;
 
 $.getJSON("naselja.json", function(json) {
 	naselja=json;
@@ -15,6 +16,40 @@ $.getJSON("naselja.json", function(json) {
 }); 
 
 function getClusters(){
+
+
+    //-----------CONTROL
+
+    info = L.control();
+
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+        this.update();
+        return this._div;
+    };
+
+    // method that we will use to update the control based on feature properties passed
+    info.update = function (props) {
+    
+        if(props != null){
+
+            var cluster = clusters.filter(c => {
+                return props.name.startsWith(c.keyword);
+            });
+
+
+            var infoString  = " <h4> " + cluster.name + " </h4> \n";
+            infoString += " <h6>Zastupljenost:" + cluster.riskProcent + "</h6>\n ";
+            infoString += " <h6>Ucestalost:"+ cluster.numberOfAccidents +"</h6>\n ";
+            this._div.innerHTML = infoString;
+        }else{
+            this._div.innerHTML =  '<h4>Selektujte oblast!</h4>';
+        }
+
+};
+
+    
+
     $.ajax({
         url: 'http://localhost:8080/api/filter',
         headers: {
@@ -37,6 +72,7 @@ function getClusters(){
             console.log('red: '+red);
        
             map = L.map('map').setView([45.267, 19.833], 14);
+            info.addTo(map);
 
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFsZW50aW5ha3lmeHJ0ZGZpeWt1dHlzIiwiYSI6ImNqd256dmp6dTA5aGczem55MjVzYWF5eGsifQ.ZNvZnQeTL7wK7RpIOmizLw' , {
                 id: 'mapbox.streets',
@@ -57,24 +93,7 @@ function getClusters(){
             });
 
 
-            //-----------CONTROL
-
-            var info = L.control();
-
-            info.onAdd = function (map) {
-                this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-                this.update();
-                return this._div;
-            };
-
-            // method that we will use to update the control based on feature properties passed
-            info.update = function (props) {
-                this._div.innerHTML = '<h4>US Population Density</h4>' +  (props ?
-                    '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
-                    : 'Hover over a state');
-            };
-
-            info.addTo(map);
+            
 
 
             //-----LEGEND
@@ -90,7 +109,7 @@ function getClusters(){
 
             legend.onAdd = function (map) {
 
-            var div = L.DomUtil.create('div', 'info legend'),
+            var div = L.DomUtil.create('div', 'legend'),
             grades = [green, yellow, orange,red],
             labels = [];
 
@@ -108,7 +127,10 @@ legend.addTo(map);
 
         }
     });
+
+    
 }
+ 
 function style(naselje) {
 	var test=getColor(naselje);
 	return {
@@ -147,7 +169,7 @@ function dangerZones(cluster, color){
 }
 
 function highlightFeature(e) {
-
+    
     var layer = e.target;
 
     layer.setStyle({
@@ -160,7 +182,10 @@ function highlightFeature(e) {
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
+   
+    console.log(layer.feature.properties);
     info.update(layer.feature.properties);
+    
 }
 function resetHighlight(e) {
     geojson.resetStyle(e.target);
