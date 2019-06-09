@@ -51,11 +51,8 @@ public class var {
         clusters.add(
                 new Cluster("Лиман",
                         ("fruskogorsk, narodnog front, dr sime milosevic, drage spasic," +
-                                "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","), "liman",19.826750,19.836880)
-        );
-        clusters.add(
-                new Cluster("Лиман",
-                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "liman",45.237750, 19.826750)
+                                "dragise brasovan, dr ivana ribar, resavsk, ravanick," +
+                                "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj").split(","), "liman",19.826750,19.836880)
         );
         clusters.add(
                 new Cluster("Сајмиште",
@@ -90,6 +87,7 @@ public class var {
     }
 
     public static void loadCrimeNumber() {
+        crimeNumber = 0;
         clusters.forEach(c -> crimeNumber += c.getNumberOfAccidents());
     }
 }

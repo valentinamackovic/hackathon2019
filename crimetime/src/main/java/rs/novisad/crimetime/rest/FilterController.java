@@ -77,8 +77,8 @@ public class FilterController {
 
 		var.loadCrimeNumber();
 
-		System.out.println(var.crimeNumber);
-		var.clusters.forEach(c -> System.out.println(c.getName() + ": " + c.getRiskProcent()));
+//		System.out.println(var.crimeNumber);
+//		var.clusters.forEach(c -> System.out.println(c.getName() + ": " + c.getRiskProcent()));
 
     	retVal.put("green", total/4);
 		retVal.put("yellow", total/2);
