@@ -55,6 +55,28 @@ function getClusters(){
             best5.forEach(function(entry) {
                 bestEl.append('<li class="center">' + entry.name + '</li>');
             });
+
+
+            //-----------CONTROL
+
+            var info = L.control();
+
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+                this.update();
+                return this._div;
+            };
+
+            // method that we will use to update the control based on feature properties passed
+            info.update = function (props) {
+                this._div.innerHTML = '<h4>US Population Density</h4>' +  (props ?
+                    '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+                    : 'Hover over a state');
+            };
+
+            info.addTo(map);
+
+
             //-----LEGEND
 
             function getColor(d) {
@@ -138,10 +160,11 @@ function highlightFeature(e) {
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
+    info.update(layer.feature.properties);
 }
 function resetHighlight(e) {
     geojson.resetStyle(e.target);
-//    info.update();
+   info.update();
 }
 function zoomToFeature(e) {
 //    map.fitBounds(e.target.getBounds());
