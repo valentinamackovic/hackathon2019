@@ -35,15 +35,12 @@ public class CreateArticleController {
 	@GetMapping("/getPrekrsaji")
 	public ResponseEntity<Object> getArticles() {
 		ArrayList<Aricle> articles=new ArrayList<>();
-		
-		CrimetimeApplication.articles.addAll(articleService.findAll());
 		System.out.println(CrimetimeApplication.articles.size());
-		for(Aricle a: CrimetimeApplication.articles) {
-			System.out.println(a.getId());
+		for(Aricle a: articleService.findAll()) {
 			if(a.getCrimeCategory()==CrimeCategory.Prekrsaj)
 				articles.add(a);
 		}
-		return new ResponseEntity<>("Successful", HttpStatus.OK);
+		return new ResponseEntity<>(articles, HttpStatus.OK);
 //		return articles;
 	}
 	
