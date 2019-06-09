@@ -16,8 +16,6 @@ import com.google.gson.reflect.TypeToken;
 
 import rs.novisad.crimetime.CrimetimeApplication;
 import rs.novisad.crimetime.entity.Aricle;
-import rs.novisad.crimetime.entity.ArticleService;
-import rs.novisad.crimetime.entity.ArticleServiceInterface;
 import rs.novisad.crimetime.entity.CrimeCategory;
 import rs.novisad.crimetime.entity.KeyWords;
 

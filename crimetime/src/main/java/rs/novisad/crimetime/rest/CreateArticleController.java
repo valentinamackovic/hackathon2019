@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import rs.novisad.crimetime.CrimetimeApplication;
 import rs.novisad.crimetime.crawler.JSONArticleParser;
 import rs.novisad.crimetime.entity.Aricle;
-import rs.novisad.crimetime.entity.ArticleServiceInterface;
+import rs.novisad.crimetime.service.ArticleServiceInterface;
 
 @Controller
 @RequestMapping("/articles")

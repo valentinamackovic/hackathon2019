@@ -1,9 +1,12 @@
-package rs.novisad.crimetime.entity;
+package rs.novisad.crimetime.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import rs.novisad.crimetime.entity.Aricle;
+import rs.novisad.crimetime.repository.ArticleRepository;
 
 @Service
 public class ArticleService implements ArticleServiceInterface{
