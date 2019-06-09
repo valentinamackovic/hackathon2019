@@ -1,6 +1,8 @@
-package rs.novisad.crimetime.entity;
+package rs.novisad.crimetime.service;
 
 import java.util.List;
+
+import rs.novisad.crimetime.entity.Aricle;
 
 public interface ArticleServiceInterface {
 

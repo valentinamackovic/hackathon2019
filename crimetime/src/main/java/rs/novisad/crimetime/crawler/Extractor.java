@@ -6,6 +6,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import rs.novisad.crimetime.entity.*;
+import rs.novisad.crimetime.service.ArticleServiceInterface;
 
 import java.io.IOException;
 import java.util.ArrayList;

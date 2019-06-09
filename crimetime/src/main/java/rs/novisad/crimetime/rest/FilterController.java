@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import rs.novisad.crimetime.crawler.Extractor;
 import rs.novisad.crimetime.entity.Aricle;
-import rs.novisad.crimetime.entity.ArticleServiceInterface;
+import rs.novisad.crimetime.service.ArticleServiceInterface;
 import rs.novisad.crimetime.entity.Cluster;
 import rs.novisad.crimetime.global.var;
 import rs.novisad.crimetime.helper.AddressProcessor;
