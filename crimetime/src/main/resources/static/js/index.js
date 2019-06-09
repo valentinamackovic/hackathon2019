@@ -41,8 +41,8 @@ function getClusters(){
 
             if (cluster != null) {
                 var infoString  = " <h4> " + cluster.name + " </h4> \n";
-                infoString += " <h6>Заступљеност: " + cluster.riskProcent.toFixed(2) + "%</h6>\n ";
-                infoString += " <h6>Учесталост: "+ cluster.numberOfAccidents +"</h6>\n ";
+                infoString += " <h6>Заступљеност<sup>1</sup>: " + cluster.riskProcent.toFixed(2) + "%</h6>\n ";
+                infoString += " <h6>Број преступа<sup>2</sup>: "+ cluster.numberOfAccidents +"</h6>\n ";
                 this._div.innerHTML = infoString;
             } else {
                 var infoString  = " <h4> " + props.name.replace("banatic", "Банатић").replace("rotkvarija", "Роткварија").replace("?", "Слана Бара").replace("adamovicevo", "Адамовићево") + " </h4> \n";
