@@ -1,6 +1,7 @@
 package rs.novisad.crimetime;
 
 import org.apache.catalina.filters.AddDefaultCharsetFilter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import rs.novisad.crimetime.crawler.Extractor;
@@ -16,6 +17,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @SpringBootApplication
 public class CrimetimeApplication {
@@ -26,5 +28,7 @@ public class CrimetimeApplication {
 		SpringApplication.run(CrimetimeApplication.class, args);
 		
 	}
+	
+	
 
 }
