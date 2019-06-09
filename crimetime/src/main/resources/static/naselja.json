@@ -3,7 +3,7 @@
   "features": [
     {
       "type": "Feature",
-      "properties": {"name":"liman I i II"},
+      "properties": {"name":"liman"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -50,7 +50,7 @@
     },
     {
       "type": "Feature",
-      "properties": {"name":"liman III i IV"},
+      "properties": {"name":"liman"},
       "geometry": {
         "type": "Polygon",
         "coordinates": [
