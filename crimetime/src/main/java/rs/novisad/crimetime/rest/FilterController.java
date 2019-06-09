@@ -33,6 +33,7 @@ public class FilterController {
     public ResponseEntity<Object> doFilter() {
 		Map<String, Object> retVal = new HashMap<>();
 		int total = 0;
+		int totalRp = 0;
 
     	List<Aricle> allArticles = articleService.findAll();
 
@@ -76,7 +77,12 @@ public class FilterController {
 		for (Cluster cluster : var.clusters) {
 			if (cluster.getNumberOfAccidents() > total)
 				total = cluster.getNumberOfAccidents();
+			if (cluster.getRiskPoints() > totalRp)
+				totalRp = cluster.getRiskPoints();
 		}
+
+		Cluster.setData(total, totalRp);
+
     	retVal.put("green", total/4);
 		retVal.put("yellow", total/2);
 		retVal.put("orange", total*3/4);
