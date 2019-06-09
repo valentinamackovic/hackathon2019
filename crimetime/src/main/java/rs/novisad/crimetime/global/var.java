@@ -84,6 +84,19 @@ public class var {
                         ("temerinsk, sentandrejsk, primorsk, otokara kersovani," +
                                 "cenejsk, paje radosavljevic, velebitsk, savsk").split(","), "klis", 45.302924, 19.824081)
         );
+        clusters.add(
+                new Cluster("Адамовићево", new String[] {} , "adamov", 45.245721, 19.822944)
+        );
+        clusters.add(
+                new Cluster("Роткварија", new String[] {} , "rotkvari", 45.260414, 19.836096)
+        );
+        clusters.add(
+                new Cluster("Банатић", new String[] {} , "banati", 45.262461, 19.823976)
+        );
+        clusters.add(
+                new Cluster("Слана Бара", new String[] {} , "slana bara", 45.288533, 19.829064)
+        );
+
     }
 
     public static void loadCrimeNumber() {
