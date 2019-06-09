@@ -33,17 +33,18 @@ function getClusters(){
     
         if(props != null){
 
-            var cluster = clusters.filter(c => {
-                return props.name.startsWith(c.keyword);
+            var cluster;
+            clusters.forEach(function(entry) {
+                if (props.name.startsWith(entry.keyword))
+                    cluster = entry;
             });
 
-
             var infoString  = " <h4> " + cluster.name + " </h4> \n";
-            infoString += " <h6>Zastupljenost:" + cluster.riskProcent + "</h6>\n ";
-            infoString += " <h6>Ucestalost:"+ cluster.numberOfAccidents +"</h6>\n ";
+            infoString += " <h6>Заступљеност: " + cluster.riskProcent.toFixed(2) + "%</h6>\n ";
+            infoString += " <h6>Учесталост: "+ cluster.numberOfAccidents +"</h6>\n ";
             this._div.innerHTML = infoString;
         }else{
-            this._div.innerHTML =  '<h4>Selektujte oblast!</h4>';
+            this._div.innerHTML =  '<h4>Изаберите кластер</h4>';
         }
 
 };
