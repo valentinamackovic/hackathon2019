@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import rs.novisad.crimetime.CrimetimeApplication;
-import rs.novisad.crimetime.crawler.JSONArticleParser;
 import rs.novisad.crimetime.entity.Aricle;
 import rs.novisad.crimetime.entity.CrimeCategory;
 import rs.novisad.crimetime.service.ArticleServiceInterface;
