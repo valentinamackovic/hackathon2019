@@ -6,7 +6,8 @@ var orange;
 var red;
 var clusters;
 var naselja;
-
+var geojson;
+var map;
 
 $.getJSON("naselja.json", function(json) {
 	naselja=json;
@@ -35,13 +36,13 @@ function getClusters(){
             console.log('orange: '+orange);
             console.log('red: '+red);
        
-            var map = L.map('map').setView([45.267, 19.833], 14);
+            map = L.map('map').setView([45.267, 19.833], 14);
 
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFsZW50aW5ha3lmeHJ0ZGZpeWt1dHlzIiwiYSI6ImNqd256dmp6dTA5aGczem55MjVzYWF5eGsifQ.ZNvZnQeTL7wK7RpIOmizLw' , {
                 id: 'mapbox.streets',
                 attribution: ''
             }).addTo(map);
-            L.geoJson(naselja, {style: style}).addTo(map);
+            geojson=L.geoJson(naselja, {style: style,onEachFeature: onEachFeature}).addTo(map);
             console.log('best: '+best5);
             console.log('worst: '+worst5);
             
@@ -87,13 +88,43 @@ function getColor(naselje){
 }
 
 function dangerZones(cluster, color){
-	
     var circle = L.circle([cluster.lon, cluster.lat], {
         color: color,
         fillColor: color,
         fillOpacity: 0.5,
         radius: 450
     }).addTo(map);
+}
+
+function highlightFeature(e) {
+
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 2,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.5
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+}
+function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+//    info.update();
+}
+function zoomToFeature(e) {
+//    map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
 }
 
 getClusters();
