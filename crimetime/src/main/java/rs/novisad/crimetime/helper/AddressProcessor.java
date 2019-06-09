@@ -16,7 +16,7 @@ public class AddressProcessor {
         for(String str : splited){
             for(Cluster cls : var.clusters){
                 if(str.toLowerCase().startsWith(cls.getKeyword())){  
-                	if(!cls.getName().equals("centar")) {
+                	if(!cls.getKeyword().equals("centar")) {
                 		return cls.getName();	
                 	}
                     
