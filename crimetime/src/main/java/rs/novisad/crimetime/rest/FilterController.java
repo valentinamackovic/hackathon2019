@@ -44,12 +44,17 @@ public class FilterController {
     			for(Cluster cls : var.clusters) {
     				if(cls.getName().equals(str)) {
     					cls.setNumberOfAccidents(cls.getNumberOfAccidents() + 1);
+    					if(article.getCrimeCategory().equals("prekrsaj")) {
+    						cls.setRiskPoints(cls.getRiskPoints() + 1);
+    					}else {
+    						cls.setRiskPoints(cls.getRiskPoints() + 2);
+    					}
+    					
     				}
     			}
     		}
     	}
-		for (Cluster cluster : var.clusters
-			 ) {
+		for (Cluster cluster : var.clusters) {
 			if (cluster.getNumberOfAccidents() > total)
 				total = cluster.getNumberOfAccidents();
 		}

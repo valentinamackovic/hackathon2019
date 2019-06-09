@@ -30,7 +30,7 @@ public class AddressProcessor {
         if(ret.equals("")){
             if(text.toUpperCase().contains("ULIC")){
                 String ulica = text.toUpperCase().split("ULIC")[1];
-
+                
 
                 String[] splitedUlica = ulica.split(" ");
                 StringBuilder sbUlica = new StringBuilder();
@@ -46,8 +46,8 @@ public class AddressProcessor {
          
                     for(Cluster c : clusters){
                         for(String adresa : c.getAddresses()){
-                            if(sbUlica.toString().startsWith(adresa)){
-                                return adresa;
+                            if(sbUlica.toString().toLowerCase().startsWith(adresa)){
+                            	return c.getName();
                             }
                         }
                     }
@@ -74,8 +74,8 @@ public class AddressProcessor {
 
                      for(Cluster c : clusters){
                          for(String adresa : c.getAddresses()){
-                             if(sbBulevar.toString().startsWith(adresa)){
-                                 return adresa;
+                             if(sbBulevar.toString().toLowerCase().startsWith(adresa)){
+                                 return c.getName();
                              }
                          }
                      }

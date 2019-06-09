@@ -5,6 +5,7 @@ public class Cluster {
     private String[] addresses;
     private String keyword;
     private int numberOfAccidents;
+    private int riskPoints;
     private double lon;
     private double lat;
 
@@ -70,6 +71,16 @@ public class Cluster {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+
+	public int getRiskPoints() {
+		return riskPoints;
+	}
+
+	public void setRiskPoints(int riskPoints) {
+		this.riskPoints = riskPoints;
+	}
+	
+	
     
     
 }

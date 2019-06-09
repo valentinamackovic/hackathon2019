@@ -75,7 +75,7 @@ public class var {
                 new Cluster("Novo naselje",
                         ("radivoja rase raduljkov, stojana novakovic, djordja niksica johanm todora javanovic," +
                                 "mileve maric, kace dejanovic, seljackih bun, brace dronjak, bate brkic, " +
-                                "dusana danilovic, stevana hladnog, antuna urban").split(","), "novo naselj", 45.252782, 19.800046)
+                                "dusana danilovic, stevana hladnog, antuna urban").split(","), "novom naselj", 45.252782, 19.800046)
         );
         clusters.add(
                 new Cluster("Adice",
