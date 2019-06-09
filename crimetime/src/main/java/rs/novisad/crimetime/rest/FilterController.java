@@ -8,16 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import rs.novisad.crimetime.crawler.Extractor;
 import rs.novisad.crimetime.entity.Aricle;
+import rs.novisad.crimetime.entity.ClusterComparator;
 import rs.novisad.crimetime.service.ArticleServiceInterface;
 import rs.novisad.crimetime.entity.Cluster;
 import rs.novisad.crimetime.global.var;
 import rs.novisad.crimetime.helper.AddressProcessor;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/api")
@@ -37,6 +35,8 @@ public class FilterController {
 		int total = 0;
 
     	List<Aricle> allArticles = articleService.findAll();
+
+    	var.clusters.forEach(Cluster::resetRisk);
     	
     	for(Aricle article : allArticles) {
     		String str = AddressProcessor.parseAdress(article.getContent());

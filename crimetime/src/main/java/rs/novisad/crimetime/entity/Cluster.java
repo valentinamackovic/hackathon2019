@@ -1,5 +1,7 @@
 package rs.novisad.crimetime.entity;
 
+import java.util.Comparator;
+
 public class Cluster {
     private String name;
     private String[] addresses;
@@ -79,8 +81,6 @@ public class Cluster {
 	public void setRiskPoints(int riskPoints) {
 		this.riskPoints = riskPoints;
 	}
-	
-	
-    
-    
+
+	public void resetRisk() {this.numberOfAccidents = 0; this.riskPoints = 0; }
 }
