@@ -51,7 +51,7 @@ function getClusters(){
                 this._div.innerHTML = infoString;
             }
         }else{
-            this._div.innerHTML =  '<h4>Изаберите насеље</h4>';
+            this._div.innerHTML = '';
         }
 
 };
@@ -75,7 +75,7 @@ function getClusters(){
             best5=clusters.sort(function(a, b){return a.riskPoints-b.riskPoints}).slice(0, 5);
             worst5=clusters.sort(function(a, b){return b.riskPoints-a.riskPoints}).slice(0, 5);
        
-            map = L.map('map').setView([45.267, 19.833], 14);
+            map = L.map('map').setView([45.267, 19.833], 13);
             info.addTo(map);
 
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidmFsZW50aW5ha3lmeHJ0ZGZpeWt1dHlzIiwiYSI6ImNqd256dmp6dTA5aGczem55MjVzYWF5eGsifQ.ZNvZnQeTL7wK7RpIOmizLw' , {
