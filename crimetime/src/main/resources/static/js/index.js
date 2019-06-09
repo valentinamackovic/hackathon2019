@@ -74,10 +74,6 @@ function getClusters(){
         	clusters=data.clusters;
             best5=clusters.sort(function(a, b){return a.riskPoints-b.riskPoints}).slice(0, 5);
             worst5=clusters.sort(function(a, b){return b.riskPoints-a.riskPoints}).slice(0, 5);
-            console.log('green: '+green);
-            console.log('yellow: '+yellow);
-            console.log('orange: '+orange);
-            console.log('red: '+red);
        
             map = L.map('map').setView([45.267, 19.833], 14);
             info.addTo(map);
@@ -123,9 +119,14 @@ function getClusters(){
 
             // loop through our density intervals and generate a label with a colored square for each interval
             for (var i = 0; i < grades.length; i++) {
+                var prev;
+                if (i == 0)
+                    prev = 0;
+                else
+                    prev = grades[i-1];
                 div.innerHTML +=
-                '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                    '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                    prev + '&ndash;' + grades[i] + '<br>';
         }
 
     return div;

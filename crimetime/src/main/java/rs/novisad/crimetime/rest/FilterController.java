@@ -70,15 +70,16 @@ public class FilterController {
     			}
     		}
     	}
+
+		var.loadCrimeNumber();
+
 		for (Cluster cluster : var.clusters) {
 			if (cluster.getNumberOfAccidents() > total)
 				total = cluster.getNumberOfAccidents();
 		}
 
-		var.loadCrimeNumber();
-
-//		System.out.println(var.crimeNumber);
-//		var.clusters.forEach(c -> System.out.println(c.getName() + ": " + c.getRiskProcent()));
+		System.out.println(var.crimeNumber);
+		var.clusters.forEach(c -> System.out.println(c.getName() + ": " + c.getRiskProcent() + ": " + c.getNumberOfAccidents()));
 
     	retVal.put("green", total/4);
 		retVal.put("yellow", total/2);
