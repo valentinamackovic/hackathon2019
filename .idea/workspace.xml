@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db44825f-f706-4aab-a1aa-7c776f02f749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crimetime/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crimetime/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/crimetime/target/" />
@@ -15,16 +15,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+            <state relative-caret-position="366">
+              <caret line="96" column="44" lean-forward="true" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
               <folding>
                 <element signature="e#1858#1859#0" expanded="true" />
                 <element signature="e#1896#1897#0" expanded="true" />
@@ -33,10 +32,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
+            <state relative-caret-position="298">
               <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
             </state>
           </provider>
@@ -256,12 +255,12 @@
       <updated>1559984145854</updated>
       <workItem from="1559984149438" duration="43550000" />
       <workItem from="1560073103450" duration="805000" />
-      <workItem from="1560079421786" duration="1632000" />
+      <workItem from="1560079421786" duration="2551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45987000" />
+    <option name="totallyTimeSpent" value="46906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -481,21 +480,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/entity/Cluster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        <state relative-caret-position="366">
+          <caret line="96" column="44" lean-forward="true" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
           <folding>
             <element signature="e#1858#1859#0" expanded="true" />
             <element signature="e#1896#1897#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="83" column="40" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
         </state>
       </provider>
     </entry>

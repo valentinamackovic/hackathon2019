@@ -48,12 +48,12 @@ function getClusters(){
             
             var worstEl = $('#worst5list');
             worst5.forEach(function(entry) {
-                worstEl.append('<li>' + entry.name + '</li>');
+                worstEl.append('<li class="center">' + entry.name + '</li>');
             });
 
             var bestEl = $('#best5list');
             best5.forEach(function(entry) {
-                bestEl.append('<li>' + entry.name + '</li>');
+                bestEl.append('<li class="center">' + entry.name + '</li>');
             });
 
         }

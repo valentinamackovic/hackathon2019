@@ -23,7 +23,7 @@
 
 <body>
 <nav class="grey lighten-4" role="navigation">
-  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo black-text">CrimeTime</a>
+  <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo black-text">Crime<span class="logo-end light-blue-text text-darken-3">Time</span></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="#" class="black-text">Почетна</a></li>
       <li><a href="#scroll" class="black-text">Легенда</a></li>
@@ -40,9 +40,8 @@
 </nav>
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <h1 class="header center light-blue-text text-darken-3 text-darken-3">Нови Сад</h1>
     <div class="row center">
-      <h5 class="header col s12 light">Мапа са израженом стопом криминалитета</h5>
+      <h5 class="header col s12 light">Мапа са израженом стопом криминалитета / <span class="light-blue-text text-darken-3">Нови Сад</span></h5>
       <br/>
       <div id="map" style="width: 100%; height: 500px"></div>
       <script src="js/index.js"></script>
@@ -60,29 +59,29 @@
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center light-blue-text text-darken-3"><i class="material-icons">map</i></h2>
-          <h5 class="center">Легенда</h5>
+          <h5 class="center" style="font-size: 20px">ЛЕГЕНДА</h5>
           <ul>
-            <li><span style="color:#18ad1d">Ниска стопа</span></li>
-            <li><span style="color:#dbdb30">Средња стопа</span></li>
-            <li><span style="color:#db9930">Виша стопа</span></li>
-            <li><span style="color:#ce3227">Висока стопа</span></li>
+            <li class="center"><b><span style="color:#18ad1d">Ниска стопа</span></b></li>
+            <li class="center"><b><span style="color:#dbdb30">Средња стопа</span></b></li>
+            <li class="center"><b><span style="color:#db9930">Виша стопа</span></b></li>
+            <li class="center"><b><span style="color:#ce3227">Висока стопа</span></b></li>
           </ul>
         </div>
       </div>
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text text-darken-3"><i class="material-icons">mood_bad</i></h2>
-          <h5 class="center">Најнебезбеднија</h5>
-          <ul id="worst5list"></ul>
+          <h2 class="center light-blue-text text-darken-3"><i class="material-icons">mood</i></h2>
+          <h5 class="center" style="font-size: 20px">БЕЗБЕДНО</h5>
+          <ul id="best5list"></ul>
         </div>
       </div>
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text text-darken-3"><i class="material-icons">mood</i></h2>
-          <h5 class="center">Најбезбеднија</h5>
-          <ul id="best5list"></ul>
+          <h2 class="center light-blue-text text-darken-3"><i class="material-icons">mood_bad</i></h2>
+          <h5 class="center" style="font-size: 20px">НЕБЕЗБЕДНО</h5>
+          <ul id="worst5list"></ul>
         </div>
       </div>
     </div>
@@ -94,7 +93,7 @@
 <footer class="page-footer grey darken-4">
   <div class="footer-copyright">
     <div class="container">
-      Тим <a class="white-text" href="#">Codesiasts</a>
+      <p class="center">Тим <a class="white-text" href="#">Codesiasts</a></p>
     </div>
   </div>
 </footer>

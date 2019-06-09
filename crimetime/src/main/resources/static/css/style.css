@@ -5,10 +5,24 @@
  *
  * Made By MaterializeCSS.com
  */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap&subset=cyrillic-ext,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Audiowide&display=swap&subset=latin-ext');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+.brand-logo {
+  font-family: 'Audiowide', cursive;
+}
+
+.logo-end {
+  font-family: 'Audiowide', cursive;
 }
