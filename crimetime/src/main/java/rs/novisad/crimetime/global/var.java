@@ -9,18 +9,18 @@ public class var {
     public static List<Cluster> clusters = new ArrayList<>();
 
     static {
-//        clusters.add(
-//                new Cluster("Centar",
-//                        ("zmaj jovin, dunvask, ilije ognjanovic, laze telecko, milticev, pasicev, zlatne gred," +
-//                                "njegosev, futosk, jevrejsk, safarnikov, masarikov, jovana subotic," +
-//                                "vojvode bojovic, lukijana musick, vojvode supljikc, vuka karadzic," +
-//                                "pap pavl, narodnih heroj, zeleznick, vase stajic").split(","),"centar",45.250790, 19.848328)
-//        );
         clusters.add(
-                new Cluster("Стари град",
-                        ("maksima gorkog, radnick, strazilovsk, stevana music, vojvode misic, jovana djordjevic," +
-                                "vladike platon, sutjesk, zarka zrenjanin").split(","), "stari grad",45.250790, 19.848328)
+                new Cluster("Центар",
+                        ("zmaj jovin, dunvask, ilije ognjanovic, laze telecko, milticev, pasicev, zlatne gred," +
+                                "njegosev, futosk, jevrejsk, safarnikov, masarikov, jovana subotic," +
+                                "vojvode bojovic, lukijana musick, vojvode supljikc, vuka karadzic," +
+                                "pap pavl, narodnih heroj, zeleznick, vase stajic").split(","),"centar",45.250790, 19.848328)
         );
+//        clusters.add(
+//                new Cluster("stari grad",
+//                        ("maksima gorkog, radnick, strazilovsk, stevana music, vojvode misic, jovana djordjevic," +
+//                                "vladike platon, sutjesk, zarka zrenjanin").split(","), "stari grad",45.250790, 19.848328)
+//        );
         clusters.add(
                 new Cluster("Кеј",
                         "kej zrtava racij, beogradski, suncani".split(","), "kej")
@@ -48,13 +48,13 @@ public class var {
                                 "puskinov, gogoljev, tolstojev, vojvode knicanin").split(","), "grbavic",45.246157, 19.833241)
         );
         clusters.add(
-                new Cluster("Лиман 1 и 2",
+                new Cluster("Лиман I и II",
                         ("fruskogorsk, narodnog front, dr sime milosevic, drage spasic," +
                                 "dragise brasovan, dr ivana ribar, resavsk, ravanick").split(","), "liman I i II",19.826750,19.836880)
         );
         clusters.add(
-                new Cluster("Лиман 3 и 4",
-                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "Liman III i IV",45.237750, 19.826750)
+                new Cluster("Лиман III и IV",
+                        "balzakov, podgorick, sekspirov, iva andric, 1300 kaplar, banovic strahinj".split(","), "liman III i IV",45.237750, 19.826750)
         );
         clusters.add(
                 new Cluster("Сајмиште",
@@ -72,7 +72,7 @@ public class var {
                                 "dr svetislava kasapinovic, ilije bircanin").split(","), "detelinar", 45.259143, 19.815119)
         );
         clusters.add(
-                new Cluster("Ново насеље",
+                new Cluster("Ново Насеље",
                         ("radivoja rase raduljkov, stojana novakovic, djordja niksica johanm todora javanovic," +
                                 "mileve maric, kace dejanovic, seljackih bun, brace dronjak, bate brkic, " +
                                 "dusana danilovic, stevana hladnog, antuna urban").split(","), "novom naselj", 45.252782, 19.800046)

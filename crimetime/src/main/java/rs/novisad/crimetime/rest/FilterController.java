@@ -44,13 +44,32 @@ public class FilterController {
     			for(Cluster cls : var.clusters) {
     				if(cls.getName().equals(str)) {
     					cls.setNumberOfAccidents(cls.getNumberOfAccidents() + 1);
-    					if(article.getCrimeCategory().equals("prekrsaj")) {
+    					if(article.getCrimeCategory().equals("Prekrsaj")) {
     						cls.setRiskPoints(cls.getRiskPoints() + 1);
-    					}else {
+    					}else if (article.getCrimeCategory().equals("LaksaKrivicnaDela")) {
     						cls.setRiskPoints(cls.getRiskPoints() + 2);
+    					}else {
+    						cls.setRiskPoints(cls.getRiskPoints() + 3);
     					}
     					
     				}
+    			}
+    		}else {
+    			str = AddressProcessor.parseAdress(article.getTitle());
+    			if(!str.equals("")) {
+    				for(Cluster cls : var.clusters) {
+        				if(cls.getName().equals(str)) {
+        					cls.setNumberOfAccidents(cls.getNumberOfAccidents() + 1);
+        					if(article.getCrimeCategory().equals("Prekrsaj")) {
+        						cls.setRiskPoints(cls.getRiskPoints() + 1);
+        					}else if (article.getCrimeCategory().equals("LaksaKrivicnaDela")) {
+        						cls.setRiskPoints(cls.getRiskPoints() + 2);
+        					}else {
+        						cls.setRiskPoints(cls.getRiskPoints() + 3);
+        					}
+        					
+        				}
+        			}
     			}
     		}
     	}

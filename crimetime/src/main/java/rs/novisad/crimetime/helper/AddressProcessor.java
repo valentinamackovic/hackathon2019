@@ -12,17 +12,14 @@ public class AddressProcessor {
         List<Cluster> clusters = var.clusters;
         String[] splited = text.split(" ");
         
-//
-//        for(Cluster oblast : clusters){
-//            if(text.toLowerCase().contains(oblast.getName())){
-//                ret = oblast.getName();
-//            }
-//        }
 
         for(String str : splited){
             for(Cluster cls : var.clusters){
-                if(str.toLowerCase().startsWith(cls.getKeyword())){                	
-                    return cls.getName();
+                if(str.toLowerCase().startsWith(cls.getKeyword())){  
+                	if(!cls.getKeyword().equals("centar")) {
+                		return cls.getName();	
+                	}
+                    
                 }
             }
         }
@@ -52,6 +49,7 @@ public class AddressProcessor {
                         }
                     }
                 }
+                
                 
                 
 
