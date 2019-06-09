@@ -15,7 +15,9 @@ import rs.novisad.crimetime.helper.AddressProcessor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/api")
@@ -31,6 +33,8 @@ public class FilterController {
 
     @GetMapping("/filter")
     public ResponseEntity<Object> doFilter() {
+		Map<String, Object> retVal = new HashMap<>();
+		int total = 0;
 
     	List<Aricle> allArticles = articleService.findAll();
     	
@@ -44,11 +48,16 @@ public class FilterController {
     			}
     		}
     	}
-    	
-    	for(Cluster c : var.clusters) {
-    		System.out.println(c.getName() + " - " + c.getNumberOfAccidents());
-    	}
-
-        return new ResponseEntity<>(articleService.findAll(), HttpStatus.OK);
+		for (Cluster cluster : var.clusters
+			 ) {
+			if (cluster.getNumberOfAccidents() > total)
+				total = cluster.getNumberOfAccidents();
+		}
+    	retVal.put("green", total/4);
+		retVal.put("yellow", total/2);
+		retVal.put("orange", total*3/4);
+		retVal.put("red", total);
+    	retVal.put("clusters", var.clusters);
+        return new ResponseEntity<>(retVal, HttpStatus.OK);
     }
 }

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db44825f-f706-4aab-a1aa-7c776f02f749" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/SimpleCORSFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/crimetime/target/" />
@@ -40,14 +39,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/SimpleCORSFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="148">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -108,6 +116,7 @@
         <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/IndexController.java" />
         <option value="$PROJECT_DIR$/crimetime/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/crimetime/src/main/resources/static/index.html" />
+        <option value="$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java" />
       </list>
     </option>
   </component>
@@ -294,12 +303,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559984145854</updated>
-      <workItem from="1559984149438" duration="35583000" />
+      <workItem from="1559984149438" duration="36324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35583000" />
+    <option name="totallyTimeSpent" value="36324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -311,10 +320,10 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28517398" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" sideWeight="0.49924356" visible="true" weight="0.32850242" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49924356" weight="0.32850242" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50075644" side_tool="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" weight="0.32850242" />
@@ -323,7 +332,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.5748792" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.5748792" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -560,11 +569,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="148">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crimetime/src/main/java/rs/novisad/crimetime/rest/FilterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
         </state>
       </provider>
     </entry>
