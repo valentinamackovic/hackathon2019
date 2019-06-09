@@ -29,10 +29,14 @@ function getClusters(){
         	orange=data.orange;
         	red=data.red;
         	clusters=data.clusters;
+            best5=clusters.sort(function(a, b){return a.riskPoints-b.riskPoints}).slice(0, 5);
+            worst5=clusters.sort(function(a, b){return b.riskPoints-a.riskPoints}).slice(0, 5);
             console.log('green: '+green);
             console.log('yellow: '+yellow);
             console.log('orange: '+orange);
             console.log('red: '+red);
+            console.log('best: '+best5);
+            console.log('worst: '+worst5);
             
             var i;
             for(i=0; i<clusters.length; i++){
@@ -46,6 +50,17 @@ function getClusters(){
             	else if(clusters[i].numberOfAccidents<=red)
             		dangerZones(cluster, '#ce3227');
             }
+
+            var worstEl = $('#worst5list');
+            worst5.forEach(function(entry) {
+                worstEl.append('<li>' + entry.name + '</li>');
+            });
+
+            var bestEl = $('#best5list');
+            best5.forEach(function(entry) {
+                bestEl.append('<li>' + entry.name + '</li>');
+            });
+
         }
     });
 }

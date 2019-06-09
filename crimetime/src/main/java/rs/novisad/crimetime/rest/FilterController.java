@@ -65,18 +65,4 @@ public class FilterController {
     	retVal.put("clusters", var.clusters);
         return new ResponseEntity<>(retVal, HttpStatus.OK);
     }
-
-    @GetMapping("/best5")
-	public ResponseEntity<Object> getBestFive() {
-		doFilter();
-		Collections.sort(var.clusters, new ClusterComparator());
-		return new ResponseEntity<>(var.clusters.subList(0,5), HttpStatus.OK);
-	}
-
-	@GetMapping("/worst5")
-	public ResponseEntity<Object> getWorstFive() {
-		doFilter();
-		Collections.sort(var.clusters, new ClusterComparator().reversed());
-		return new ResponseEntity<>(var.clusters.subList(0,5), HttpStatus.OK);
-	}
 }
