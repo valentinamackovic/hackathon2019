@@ -7,6 +7,7 @@ import java.util.List;
 
 public class var {
     public static List<Cluster> clusters = new ArrayList<>();
+    public static int crimeNumber = 0;
 
     static {
         clusters.add(
@@ -86,5 +87,9 @@ public class var {
                         ("temerinsk, sentandrejsk, primorsk, otokara kersovani," +
                                 "cenejsk, paje radosavljevic, velebitsk, savsk").split(","), "klis", 45.302924, 19.824081)
         );
+    }
+
+    public static void loadCrimeNumber() {
+        clusters.forEach(c -> crimeNumber += c.getNumberOfAccidents());
     }
 }
