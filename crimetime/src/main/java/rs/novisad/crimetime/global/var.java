@@ -9,13 +9,13 @@ public class var {
     public static List<Cluster> clusters = new ArrayList<>();
 
     static {
-//        clusters.add(
-//                new Cluster("Centar",
-//                        ("zmaj jovin, dunvask, ilije ognjanovic, laze telecko, milticev, pasicev, zlatne gred," +
-//                                "njegosev, futosk, jevrejsk, safarnikov, masarikov, jovana subotic," +
-//                                "vojvode bojovic, lukijana musick, vojvode supljikc, vuka karadzic," +
-//                                "pap pavl, narodnih heroj, zeleznick, vase stajic").split(","),"centar",45.250790, 19.848328)
-//        );
+        clusters.add(
+                new Cluster("Centar",
+                        ("zmaj jovin, dunvask, ilije ognjanovic, laze telecko, milticev, pasicev, zlatne gred," +
+                                "njegosev, futosk, jevrejsk, safarnikov, masarikov, jovana subotic," +
+                                "vojvode bojovic, lukijana musick, vojvode supljikc, vuka karadzic," +
+                                "pap pavl, narodnih heroj, zeleznick, vase stajic").split(","),"centar",45.250790, 19.848328)
+        );
         clusters.add(
                 new Cluster("Стари град",
                         ("maksima gorkog, radnick, strazilovsk, stevana music, vojvode misic, jovana djordjevic," +
