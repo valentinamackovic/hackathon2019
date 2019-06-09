@@ -1,24 +1,19 @@
 package rs.novisad.crimetime.crawler;
 
-import com.google.gson.Gson;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import rs.novisad.crimetime.entity.Aricle;
-import rs.novisad.crimetime.entity.ConvertText;
+import org.springframework.beans.factory.annotation.Autowired;
+import rs.novisad.crimetime.entity.*;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 public class Extractor {
+
     private static List<Aricle> articles;
 
     private final static String DATA_CRAWLER_PATH = System.getProperty("user.dir").replace("crimetime\\", "") + "\\crimetime\\crawler_data\\";
@@ -72,7 +67,7 @@ public class Extractor {
         }
     }
 
-    public void getArticles() {
+    public void getArticles(ArticleServiceInterface articleService) {
         links.forEach(x -> {
             if (x.startsWith("http")) {
                 try {
@@ -88,6 +83,8 @@ public class Extractor {
                                 ConvertText.convert(single.text()));
                         if (articles.stream().filter(a -> a.getTitle().equalsIgnoreCase(tempArticle.getTitle())).findFirst().orElse(null) == null) {
                             articles.add(tempArticle);
+                            getArticleContext(tempArticle);
+                            articleService.save(tempArticle);
                             System.out.println("Loading article number " + ++numberOfAricles + "...");
                         }
                     }
@@ -98,23 +95,21 @@ public class Extractor {
         });
     }
 
-    public static void writeToFile(String filename) {
-        try {
-            System.out.println("WRITING TO FILE...");
-            final String FILE_PATH = DATA_CRAWLER_PATH + filename;
-            File file = new File(FILE_PATH);
-            if (!file.createNewFile())
-                System.out.println("FAILED TO CREATE NEW FILE...");
-            Gson gson = new Gson();
-            Files.write(Paths.get(FILE_PATH), "[".getBytes(), StandardOpenOption.APPEND);
-            for (Aricle article : articles
-            ) {
-                Files.write(Paths.get(FILE_PATH), (gson.toJson(article) + ",").getBytes(), StandardOpenOption.APPEND);
+    public void getArticleContext(Aricle article) {
+        String content = article.getContent();
+        content = content.replace(".", " ").replace("!", " ").replace(",", " ").replace("?", " ");
+
+        for (String w : KeyWords.words) {
+            if (content.toLowerCase().contains(w.toLowerCase()) && (w.equals("ubist") || w.equals("upuc")
+                    || w.equals("ranjen") || w.equals("pucnjav") || w.equals("silov"))) {
+                article.setCrimeCategory(CrimeCategory.TezaKrivicnaDela);
+            } else if (content.toLowerCase().contains(w.toLowerCase()) && (w.equals("pljacka") || w.equals("opljacka")
+                    || w.equals("pretuc") || w.equals("utuc") || w.equals("povredj") || w.equals("napad")
+                    || w.equals("nesta") || w.equals("dilova") || w.equals("pretuk"))) {
+                article.setCrimeCategory(CrimeCategory.LaksaKrivicnaDela);
+            } else {
+                article.setCrimeCategory(CrimeCategory.Prekrsaj);
             }
-            Files.write(Paths.get(FILE_PATH), "]".getBytes(), StandardOpenOption.APPEND);
-            System.out.println("FILE READY!");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }

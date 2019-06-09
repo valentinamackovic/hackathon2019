@@ -24,6 +24,7 @@ public class CrimetimeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrimetimeApplication.class, args);
+		
 	}
 
 }
