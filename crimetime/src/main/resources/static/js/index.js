@@ -39,12 +39,19 @@ function getClusters(){
                     cluster = entry;
             });
 
-            var infoString  = " <h4> " + cluster.name + " </h4> \n";
-            infoString += " <h6>Заступљеност: " + cluster.riskProcent.toFixed(2) + "%</h6>\n ";
-            infoString += " <h6>Учесталост: "+ cluster.numberOfAccidents +"</h6>\n ";
-            this._div.innerHTML = infoString;
+            if (cluster != null) {
+                var infoString  = " <h4> " + cluster.name + " </h4> \n";
+                infoString += " <h6>Заступљеност: " + cluster.riskProcent.toFixed(2) + "%</h6>\n ";
+                infoString += " <h6>Учесталост: "+ cluster.numberOfAccidents +"</h6>\n ";
+                this._div.innerHTML = infoString;
+            } else {
+                var infoString  = " <h4> " + props.name.replace("banatic", "Банатић").replace("rotkvarija", "Роткварија").replace("?", "Слана Бара").replace("adamovicevo", "Адамовићево") + " </h4> \n";
+                infoString += " <h6>Заступљеност: ускоро</h6>\n ";
+                infoString += " <h6>Учесталост: ускоро</h6>\n ";
+                this._div.innerHTML = infoString;
+            }
         }else{
-            this._div.innerHTML =  '<h4>Изаберите кластер</h4>';
+            this._div.innerHTML =  '<h4>Изаберите насеље</h4>';
         }
 
 };

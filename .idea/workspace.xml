@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db44825f-f706-4aab-a1aa-7c776f02f749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,8 +32,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="42" column="85" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
+            <state relative-caret-position="230">
+              <caret line="53" column="56" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
                 <element signature="e#0#7#0" expanded="true" />
@@ -350,12 +349,12 @@
       <workItem from="1559984149438" duration="43550000" />
       <workItem from="1560073103450" duration="805000" />
       <workItem from="1560079421786" duration="2853000" />
-      <workItem from="1560085567697" duration="3678000" />
+      <workItem from="1560085567697" duration="4265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50886000" />
+    <option name="totallyTimeSpent" value="51473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -371,13 +370,13 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32850242" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.46376812" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.46376812" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32850242" />
@@ -585,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crimetime/src/main/resources/static/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="42" column="85" selection-start-line="42" selection-start-column="85" selection-end-line="42" selection-end-column="85" />
+        <state relative-caret-position="230">
+          <caret line="53" column="56" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="56" />
           <folding>
             <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
             <element signature="e#0#7#0" expanded="true" />
