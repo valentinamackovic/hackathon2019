@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import rs.novisad.crimetime.crawler.Extractor;
-import rs.novisad.crimetime.entity.ArticleServiceInterface;
+import rs.novisad.crimetime.service.ArticleServiceInterface;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
